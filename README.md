@@ -1,2 +1,2 @@
 # PlannerProject-Spring
-Spring repository of the Planner project, development branch.
+Spring repository of the Planner project, branch development.
