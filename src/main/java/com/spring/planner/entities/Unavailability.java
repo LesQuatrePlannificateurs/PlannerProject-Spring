@@ -5,7 +5,7 @@ import java.util.Date;
 public class Unavailability {
 
     Long id;
-    String nameIdispo;
+    String nameIndispo;
     Date startUnavailability;
     Date endUnavailability;
 
