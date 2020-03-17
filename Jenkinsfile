@@ -7,5 +7,11 @@ pipeline {
       }
     }
 
+    stage('sonar') {
+      steps {
+        withSonarQubeEnv 'sonar'
+      }
+    }
+
   }
 }
