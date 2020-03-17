@@ -1,4 +1,8 @@
 package com.spring.planner.entities;
 
-public class Classroom {
+import javax.persistence.Table;
+
+@Table(name="unavailability_classroom_timeslot")
+public class Classroom extends Item {
+
 }
