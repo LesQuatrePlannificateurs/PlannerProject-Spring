@@ -21,7 +21,7 @@ public class PlannerApplication {
             return new CommandLineRunner() {
                 @Override
                 public void run(String... args) throws Exception {
-                    repository.save(new Unavailability("histoire", "14h00","16h00",2L,12L,23L));
+                    repository.save(new Unavailability("histoire", "14h00","15h00",2L,12L,23L));
                     repository.save(new Unavailability("math", "08h00","10h00",4L,13L,1L));
                     System.out.println("Unavailabilities added");
                 }

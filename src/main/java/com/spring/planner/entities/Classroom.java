@@ -9,7 +9,6 @@ public class Classroom {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Long id;
-
     private String name;
 
     public Classroom() {
