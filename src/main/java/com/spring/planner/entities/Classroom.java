@@ -1,8 +1,15 @@
 package com.spring.planner.entities;
 
+import javax.persistence.Entity;
 import javax.persistence.Table;
 
-@Table(name="unavailability_classroom_timeslot")
+@Entity
+@Table(name="classroom")
 public class Classroom extends Item {
+    public Classroom(Long id, String name) {
+    super.id = id;
+    super.name = name;
+    }
+
 
 }

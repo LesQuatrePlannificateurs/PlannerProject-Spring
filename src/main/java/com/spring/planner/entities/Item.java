@@ -15,5 +15,4 @@ public abstract class Item {
 
     String name;
 
-//    List<Unavailability> unavailabilityList;
 }
