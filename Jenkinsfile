@@ -7,9 +7,10 @@ pipeline {
       }
     }
 
-    stage('testsonar') {
+    stage('Javadoc') {
       steps {
-        withSonarQubeEnv 'sonar'
+        slackSend()
+        slackSend(baseUrl: 'https://app.slack.com/client/TV94AUBK3/C01094355E2', message: 'test')
       }
     }
 
