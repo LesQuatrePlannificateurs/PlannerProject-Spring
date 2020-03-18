@@ -11,8 +11,8 @@ public class Unavailability {
     @GeneratedValue(strategy= GenerationType.AUTO)
     Long id;
     String nameIndispo;
-    Date start;
-    Date end;
+    String start = new Date().toString();
+    String end = new Date().toString();
     Long profId;
     Long classroomId;
     Long equipmentId;
@@ -70,19 +70,19 @@ public class Unavailability {
         this.nameIndispo = nameIndispo;
     }
 
-    public Date getStart() {
+    public String getStart() {
         return start;
     }
 
-    public void setStart(Date start) {
+    public void setStart(String start) {
         this.start = start;
     }
 
-    public Date getEnd() {
+    public String getEnd() {
         return end;
     }
 
-    public void setEnd(Date end) {
+    public void setEnd(String end) {
         this.end = end;
     }
 }
