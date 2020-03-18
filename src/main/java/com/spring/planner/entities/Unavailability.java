@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-@Table(name="unavalabilities")
+@Table
 public class Unavailability {
 
     @Id
@@ -18,16 +18,25 @@ public class Unavailability {
     Long equipmentId;
 
 
+    public Unavailability() {
+    }
 
     public Unavailability(String nameIndispo) {
         this.nameIndispo = nameIndispo;
     }
 
-    public Unavailability() {
-    }
 
     public Unavailability(Long profId) {
         this.profId = profId;
+    }
+
+    public Unavailability(String nameIndispo, String start, String end, Long profId, Long classroomId, Long equipmentId) {
+        this.nameIndispo = nameIndispo;
+        this.start = start;
+        this.end = end;
+        this.profId = profId;
+        this.classroomId = classroomId;
+        this.equipmentId = equipmentId;
     }
 
     public Long getProfId() {

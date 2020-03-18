@@ -12,7 +12,7 @@ public class ClassroomService {
     @Autowired
     ClassroomRepository classroomRepository;
 
-public List fetchClassroomUnavailibility(Long id){
-    return (List) classroomRepository.findUnavailabilityByClassroomId(id);
-}
+    public List fetchClassroomUnavailibility(Long id) {
+        return (List) classroomRepository.findUnavailabilityByClassroomId(id);
+    }
 }
