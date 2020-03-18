@@ -7,9 +7,9 @@ pipeline {
       }
     }
 
-    stage('') {
+    stage('testsonar') {
       steps {
-        withSonarQubeEnv 'sonartest'
+        withSonarQubeEnv 'sonar'
       }
     }
 
