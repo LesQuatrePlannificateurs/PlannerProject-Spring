@@ -6,7 +6,7 @@ import java.util.Date;
  * This is the Unavailability class
  * It is the central point of lessons management
  * Each Professor will be able to assign a lesson to a schedule slot.
- * Toutes les indisponibilitées seront enregistrées dans une table de la database.
+ * All unavailabilities will be saved in a table of the database.
  * Unavailability is characterized by the following information:
  * <ul>
  * <li>Un identifiant unique généré automatiquement.</li>
@@ -41,23 +41,15 @@ public class Unavailability {
     public Unavailability() {
     }
 
-    public Unavailability(String nameIndispo) {
 
-        this.nameIndispo = nameIndispo;
-    }
-
-
-    public Unavailability(Long profId) {
-        this.profId = profId;
-    }
-
-    public Unavailability(String nameIndispo, String start, String end, Long profId, Long classroomId, Long equipmentId) {
+    public Unavailability(String nameIndispo, String start, String end, Long profId, Long classroomId,Long studentClassId, Long equipmentId) {
         this.nameIndispo = nameIndispo;
         this.start = start;
         this.end = end;
         this.profId = profId;
         this.classroomId = classroomId;
         this.equipmentId = equipmentId;
+        this.studentClassId=studentClassId;
     }
 
     public Long getStudentClassId() {

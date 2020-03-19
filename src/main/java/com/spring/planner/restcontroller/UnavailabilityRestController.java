@@ -34,11 +34,18 @@ public class UnavailabilityRestController {
 
     }
 
-    // Ne fonctionne pas, à reprendre
-    @RequestMapping(value="/udpateunavailability/{id}", method = RequestMethod.POST)
-    public Unavailability updateUnavailability(Unavailability unavailability, @PathVariable Long id){
-        return unavailabilityService.updateUnavailability(unavailability,id);
-    }
 
+    @RequestMapping(value="/udpateunavailability/{id}", method = RequestMethod.PUT)
+    public Unavailability updateUnavailability(@RequestBody Unavailability unavailability, @PathVariable Long id){
+        Unavailability unavailability1 = unavailabilityService.findUnavailabilityById(id);
+        unavailability1.setNameIndispo(unavailability.getNameIndispo());
+        unavailability1.setStart(unavailability.getStart());
+        unavailability1.setEnd(unavailability.getEnd());
+        unavailability1.setProfId(unavailability.getProfId());
+        unavailability1.setClassroomId(unavailability.getClassroomId());
+        unavailability1.setEquipmentId(unavailability.getEquipmentId());
+        unavailability1.setStudentClassId(unavailability.getStudentClassId());
+        return unavailabilityService.addUnavailability(unavailability1);
+    }
 
 }

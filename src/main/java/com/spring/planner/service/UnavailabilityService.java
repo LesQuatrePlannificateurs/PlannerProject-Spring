@@ -4,6 +4,7 @@ package com.spring.planner.service;
 import com.spring.planner.entities.Unavailability;
 import com.spring.planner.repository.UnavailabilityRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -41,17 +42,8 @@ public class UnavailabilityService {
         unavailabilityRepository.delete(unavailability);
     }
 
-
-    //Ne fonctionne pas, à reprendre
-    public Unavailability updateUnavailability(Unavailability unavailabilityToUpdate, Long id){
-        Unavailability unavailability = unavailabilityRepository.findById(id).orElse(null);
-        unavailability.setNameIndispo(unavailabilityToUpdate.getNameIndispo());
-        unavailability.setStart(unavailabilityToUpdate.getStart());
-        unavailability.setEnd(unavailabilityToUpdate.getEnd());
-        unavailability.setProfId(unavailabilityToUpdate.getProfId());
-        unavailability.setClassroomId(unavailabilityToUpdate.getClassroomId());
-        unavailability.setEquipmentId(unavailabilityToUpdate.getEquipmentId());
-        return unavailabilityRepository.save(unavailability);
+    public Unavailability findUnavailabilityById(Long id){
+        return unavailabilityRepository.findById(id).orElse(null);
     }
 
 }
