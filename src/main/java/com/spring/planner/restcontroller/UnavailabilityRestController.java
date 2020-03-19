@@ -35,7 +35,7 @@ public class UnavailabilityRestController {
     }
 
 
-    @RequestMapping(value="/udpateunavailability/{id}", method = RequestMethod.PUT)
+    @RequestMapping(value="/udpateunavailability/{id}", method = RequestMethod.POST)
     public Unavailability updateUnavailability(@RequestBody Unavailability unavailability, @PathVariable Long id){
         Unavailability unavailability1 = unavailabilityService.findUnavailabilityById(id);
         unavailability1.setNameIndispo(unavailability.getNameIndispo());
