@@ -22,6 +22,7 @@ public class Unavailability {
     }
 
     public Unavailability(String nameIndispo) {
+
         this.nameIndispo = nameIndispo;
     }
 
