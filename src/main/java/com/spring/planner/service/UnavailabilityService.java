@@ -25,6 +25,15 @@ public class UnavailabilityService {
     }
 
     /**
+     * find a professor planning thanks to his id
+     * @param id id of the professor
+     * @return return a list of unavailabilities
+     */
+    public List findUnavailibilityByProfessorId(Long id){
+        return (List) unavailabilityRepository.findUnavailabilityByProfessorId(id);
+    }
+
+    /**
      * Add an unavailability
      * @param unavailability to add
      * @return the added unavailability

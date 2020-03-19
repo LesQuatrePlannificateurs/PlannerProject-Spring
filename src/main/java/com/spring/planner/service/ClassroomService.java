@@ -38,8 +38,7 @@ public class ClassroomService {
      * @param classroomId to delete
      */
     public void deleteClassroom(Long classroomId){
-        Classroom classroom = this.findClassroombyId(classroomId);
-        classroomRepository.delete(classroom);
+        classroomRepository.deleteById(classroomId);
     }
 
     /**
