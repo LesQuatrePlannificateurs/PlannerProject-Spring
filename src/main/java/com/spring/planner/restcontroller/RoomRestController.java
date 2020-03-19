@@ -13,51 +13,56 @@ import java.util.List;
 @RestController
 public class RoomRestController {
 
-    @Autowired
-    UnavailabilityService unavailabilityService;
+
     @Autowired
     ClassroomService classroomService;
+    @Autowired
+    UnavailabilityService unavailabilityService;
 
-    //fonctionne dans postman !
+    /**
+     * Get a specific Classroom planning thanks to the classroom Id
+     * @param id id of the specific classroom
+     * @return a list of unavailabilities for this classroom
+     */
     @RequestMapping("/classroomPlanning/{id}")
     public List<Unavailability> getPlanningClassroom(@PathVariable("id")Long id){
         List unaList = unavailabilityService.findUnavailibilityByClassroomId(id) ;
         return unaList;
     }
 
-
-    //fonctionne dans postman !
-    @RequestMapping(value = "/addunavailability", method = RequestMethod.POST)
-    public Unavailability addUnavailability(@RequestBody Unavailability unavailability){
-        return unavailabilityService.addUnavailability(unavailability);
-    }
-
-    //fonctionne dans postman !
-    @RequestMapping("/deleteunavailability/{id}")
-    public void deleteUnavailabilityById(@PathVariable("id")Long id){
-        unavailabilityService.deleteUnavailabilityById(id);
-
-    }
-
-    //fonctionne dans postman !
+    /**
+     * find a specific classroom thanks to its id
+     * @param id id of the specific classroom
+     * @return a classroom
+     */
     @RequestMapping("/classroom/{id}")
     public Classroom findClassroomById(@PathVariable("id")Long id){
         return classroomService.findClassroombyId(id);
     }
 
-    //Fonctionne dans postman !
+    /**
+     * Add a classroom
+     * @param classroom to add
+     * @return the added classroom
+     */
     @RequestMapping(value = "/addclassroom", method = RequestMethod.POST)
     public Classroom addClassroom(@RequestBody Classroom classroom){
         return classroomService.addClassroom(classroom);
     }
 
-    //Fonctionne dans postman !
+    /**
+     * Delete a classroom thanks to its id
+     * @param id of the classroom to delete
+     */
     @RequestMapping("/deleteclassroom/{id}")
     public void deleteClassroom(@PathVariable("id")Long id){
         classroomService.deleteClassroom(id);
     }
 
-    //Fonctionne dans postman !
+    /**
+     * Get all the classrooms
+     * @return a list of all classrooms
+     */
     @RequestMapping("/getallclassrooms")
     public List<Classroom> getAllClassrooms(){
         return classroomService.getAllClassroom();
