@@ -2,7 +2,26 @@ package com.spring.planner.entities;
 
 import javax.persistence.*;
 import java.util.Date;
-
+/**
+ * This is the Unavailability class
+ * It is the central point of lessons management
+ * Each Professor will be able to assign a lesson to a schedule slot.
+ * Toutes les indisponibilitées seront enregistrées dans une table de la database.
+ * Unavailability is characterized by the following information:
+ * <ul>
+ * <li>Un identifiant unique généré automatiquement.</li>
+ * <li>A name, most often representing a type of course.</li>
+ * <li>A moment (date + hour) of start and end.</li>
+ * <li>A prof ID.</li>
+ * </ul>
+ * </br> It can Contain possibly :
+ * <ul>
+ * <li>A Classroom ID</li>
+ * <li>An equiment ID, use during professor's Lessons</li>
+ * </ul>
+ * </p>
+ *
+ */
 @Entity
 @Table
 public class Unavailability {
@@ -15,6 +34,7 @@ public class Unavailability {
     String end= new Date().toString();
     Long profId;
     Long classroomId;
+    Long studentClassId;
     Long equipmentId;
 
 
@@ -39,6 +59,13 @@ public class Unavailability {
         this.equipmentId = equipmentId;
     }
 
+    public Long getStudentClassId() {
+        return studentClassId;
+    }
+
+    public void setStudentClassId(Long studentClassId) {
+        this.studentClassId = studentClassId;
+    }
 
     public Long getProfId() {
         return profId;
