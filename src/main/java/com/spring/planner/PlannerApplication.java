@@ -28,9 +28,9 @@ public class PlannerApplication {
                     reporitory1.save(professor);
                     Classroom classroom = new Classroom("salle visio");
                     repository2.save(classroom);
-                    repository.save(new Unavailability("histoire", "11/03/2020 14:00:00","11/03/2020 15:00:00",professor, classroom,12L,23L));
-                    repository.save(new Unavailability("histoire", "10/03/2020 14:00:00","10/03/2020 15:00:00",professor,classroom,13L,1L));
-                    repository.save(new Unavailability("math", "13/03/2020 10:00:00","13/03/2020 12:00:00",professor,classroom,13L,1L));
+                    repository.save(new Unavailability("Histoire", "03/18/2020 09:00:00","03/18/2020 12:00:00",professor, classroom,12L,23L));
+                    repository.save(new Unavailability("Français", "03/19//2020 14:00:00","03/19/2020 17:00:00",professor,classroom,13L,1L));
+                    repository.save(new Unavailability("Maths", "03/20/2020 08:00:00","03/20/2020 12:00:00",professor,classroom,13L,1L));
                     System.out.println("Unavailabilities added");
                 }
             };
