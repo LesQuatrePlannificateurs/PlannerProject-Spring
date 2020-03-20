@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:4200")
+@RequestMapping("/api")
 public class RoomRestController {
 
 
@@ -26,7 +28,8 @@ public class RoomRestController {
      */
     @RequestMapping("/classroomsPlanning/{id}")
     public List<Unavailability> getPlanningClassroom(@PathVariable("id")Long id){
-        List unaList = unavailabilityService.findUnavailibilityByClassroomId(id) ;
+        Classroom classroom = classroomService.findClassroombyId(id);
+        List unaList = unavailabilityService.findUnavailibilityByClassroom(classroom) ;
         return unaList;
     }
 

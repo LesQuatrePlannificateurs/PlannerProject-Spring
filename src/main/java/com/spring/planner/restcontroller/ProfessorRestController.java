@@ -40,9 +40,9 @@ public class ProfessorRestController {
      * @param id id of the professor
      * @return the list of unavailabilities of the professor
      */
-    @RequestMapping(value = "/professorplanning/{id}")
-    public List<Unavailability> professirPlanningById(@PathVariable("id") Long id){
-        return unavailabilityService.findUnavailibilityByProfessorId(id);
-    }
+//    @RequestMapping(value = "/professorplanning/{id}/unavailability")
+//    public List<Unavailability> professirPlanningById(@PathVariable("id") Long id){
+//        return unavailabilityService.findUnavailibilityByProfessorId(id);
+//    }
 
 }

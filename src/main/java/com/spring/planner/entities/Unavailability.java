@@ -27,27 +27,31 @@ import java.util.Date;
 public class Unavailability {
 
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     Long id;
     String nameIndispo;
     String start= new Date().toString();
     String end= new Date().toString();
-    Long profId;
-    Long classroomId;
-    Long studentClassId;
-    Long equipmentId;
+    @OneToOne(cascade = CascadeType.MERGE)
+    @JoinColumn(name = "professorId")
+    Professor professor;
+    @OneToOne(cascade = CascadeType.MERGE)
+    @JoinColumn(name = "classroomId")
+    Classroom classroom;
+    Long studentClassId; // à changer en StudentClass
+    Long equipmentId; // ç changer en Equipment
 
 
     public Unavailability() {
     }
 
 
-    public Unavailability(String nameIndispo, String start, String end, Long profId, Long classroomId,Long studentClassId, Long equipmentId) {
+    public Unavailability(String nameIndispo, String start, String end, Professor professor, Classroom classroom,Long studentClassId, Long equipmentId) {
         this.nameIndispo = nameIndispo;
         this.start = start;
         this.end = end;
-        this.profId = profId;
-        this.classroomId = classroomId;
+        this.professor = professor;
+        this.classroom = classroom;
         this.equipmentId = equipmentId;
         this.studentClassId=studentClassId;
     }
@@ -60,20 +64,20 @@ public class Unavailability {
         this.studentClassId = studentClassId;
     }
 
-    public Long getProfId() {
-        return profId;
+    public Professor getProfessor() {
+        return professor;
     }
 
-    public void setProfId(Long profId) {
-        this.profId = profId;
+    public void setProfessor(Professor professor) {
+        this.professor = professor;
     }
 
-    public Long getClassroomId() {
-        return classroomId;
+    public Classroom getClassroom() {
+        return classroom;
     }
 
-    public void setClassroomId(Long classroomId) {
-        this.classroomId = classroomId;
+    public void setClassroom(Classroom classroom) {
+        this.classroom = classroom;
     }
 
     public Long getEquipmentId() {
