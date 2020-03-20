@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:4200")
+@RequestMapping("/api")
 public class RoomRestController {
 
 
@@ -24,7 +26,7 @@ public class RoomRestController {
      * @param id id of the specific classroom
      * @return a list of unavailabilities for this classroom
      */
-    @RequestMapping("/classroomPlanning/{id}")
+    @RequestMapping("/classroomsPlanning/{id}")
     public List<Unavailability> getPlanningClassroom(@PathVariable("id")Long id){
         List unaList = unavailabilityService.findUnavailibilityByClassroomId(id) ;
         return unaList;
@@ -35,7 +37,7 @@ public class RoomRestController {
      * @param id id of the specific classroom
      * @return a classroom
      */
-    @RequestMapping("/classroom/{id}")
+    @RequestMapping("/classrooms/{id}")
     public Classroom findClassroomById(@PathVariable("id")Long id){
         return classroomService.findClassroombyId(id);
     }
@@ -54,7 +56,7 @@ public class RoomRestController {
      * Delete a classroom thanks to its id
      * @param id of the classroom to delete
      */
-    @RequestMapping("/deleteclassroom/{id}")
+    @RequestMapping("/deleteclassrooms/{id}")
     public void deleteClassroom(@PathVariable("id")Long id){
         classroomService.deleteClassroom(id);
     }

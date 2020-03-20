@@ -11,13 +11,16 @@ import javax.persistence.*;
 public class Classroom {
 
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Long id;
     private String name;
 
     public Classroom() {
     }
 
+    public Classroom(String name){
+        this.name=name;
+    }
     public Classroom(Long id, String name) {
     this.id = id;
     this.name = name;

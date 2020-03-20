@@ -34,18 +34,15 @@ public class UnavailabilityRestController {
 
     }
 
-
-    @RequestMapping(value="/udpateunavailability/{id}", method = RequestMethod.PUT)
+    /**
+     * Update an existing unavailability
+     * @param unavailability is the update unavailability
+     * @param id is the id of the unavailability we want to update
+     * @return the updated unavailability
+     */
+    @RequestMapping(value="/udpateunavailability/{id}", method = RequestMethod.POST)
     public Unavailability updateUnavailability(@RequestBody Unavailability unavailability, @PathVariable Long id){
-        Unavailability unavailability1 = unavailabilityService.findUnavailabilityById(id);
-        unavailability1.setNameIndispo(unavailability.getNameIndispo());
-        unavailability1.setStart(unavailability.getStart());
-        unavailability1.setEnd(unavailability.getEnd());
-        unavailability1.setProfId(unavailability.getProfId());
-        unavailability1.setClassroomId(unavailability.getClassroomId());
-        unavailability1.setEquipmentId(unavailability.getEquipmentId());
-        unavailability1.setStudentClassId(unavailability.getStudentClassId());
-        return unavailabilityService.addUnavailability(unavailability1);
+        return unavailabilityService.updateUnavailability(unavailability,id);
     }
 
 }
