@@ -1,0 +1,5 @@
+com.spring.planner
+com.spring.planner.entities
+com.spring.planner.repository
+com.spring.planner.restcontroller
+com.spring.planner.service
