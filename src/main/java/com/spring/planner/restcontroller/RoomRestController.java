@@ -23,13 +23,12 @@ public class RoomRestController {
 
     /**
      * Get a specific Classroom planning thanks to the classroom Id
-     * @param id id of the specific classroom
+     * @param classroomId id of the specific classroom
      * @return a list of unavailabilities for this classroom
      */
     @RequestMapping("/classroomsPlanning/{id}")
-    public List<Unavailability> getPlanningClassroom(@PathVariable("id")Long id){
-        Classroom classroom = classroomService.findClassroombyId(id);
-        List unaList = unavailabilityService.findUnavailibilityByClassroom(classroom) ;
+    public List<Unavailability> getPlanningClassroom(@PathVariable("id")Long classroomId){
+        List unaList = unavailabilityService.findUnavailibilityByClassroomId(classroomId) ;
         return unaList;
     }
 

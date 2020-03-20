@@ -18,11 +18,11 @@ public class UnavailabilityService {
 
     /**
      * find all unavailabilities for a specific Classroom
-     * @param classroom of the classroom
+     * @param id of the classroom
      * @return a list of unavailabilities for this classroom Id
      */
-    public List findUnavailibilityByClassroom(Classroom classroom) {
-        return (List) unavailabilityRepository.findUnavailabilityByClassroom(classroom);
+    public List findUnavailibilityByClassroomId(Long classroomId) {
+        return (List) unavailabilityRepository.findUnavailabilityByClassroomId(classroomId);
     }
 
     /**
