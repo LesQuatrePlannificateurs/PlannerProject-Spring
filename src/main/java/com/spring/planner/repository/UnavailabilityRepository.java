@@ -11,8 +11,8 @@ public interface UnavailabilityRepository extends CrudRepository<Unavailability,
 
    // Attention, on cherche à trouver une indispo par classroom, donc cette requete doit apparaitre dans la classe UnavailabilityRepository
     //u.id, u.nameIndispo, u.start, u.end, u.professor.professorId, u.classroom.classroomId, u.equipmentId, u.studentClassId
-    @Query("SELECT u.id, u.nameIndispo, u.start, u.end, u.professor.professorId, u.professor.firstname, u.professor.lastname, u.classroom.classroomId, u.classroom.name, u.equipmentId, u.studentClassId FROM Unavailability u WHERE u.classroom=:param")
-    Iterable<Unavailability> findUnavailabilityByClassroom(@Param("param")Classroom classroom);
+    @Query("SELECT u.id, u.nameIndispo, u.start, u.end, u.professor.professorId, u.professor.firstname, u.professor.lastname, u.classroom.classroomId, u.classroom.name, u.equipmentId, u.studentClassId FROM Unavailability u WHERE u.classroom.classroomId=:param")
+    Iterable<Unavailability> findUnavailabilityByClassroomId(@Param("param")Long id);
 
     @Query("SELECT u FROM Unavailability u WHERE u.professor=:param")
     Iterable<Unavailability> findUnavailabilityByProfessorId(@Param("param")Long id);
