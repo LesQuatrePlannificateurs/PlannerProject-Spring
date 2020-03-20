@@ -1,6 +1,7 @@
 package com.spring.planner.service;
 
 
+import com.spring.planner.entities.Classroom;
 import com.spring.planner.entities.Unavailability;
 import com.spring.planner.repository.UnavailabilityRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,11 +18,11 @@ public class UnavailabilityService {
 
     /**
      * find all unavailabilities for a specific Classroom
-     * @param id of the classroom
+     * @param classroom of the classroom
      * @return a list of unavailabilities for this classroom Id
      */
-    public List findUnavailibilityByClassroomId(Long id) {
-        return (List) unavailabilityRepository.findUnavailabilityByClassroomId(id);
+    public List findUnavailibilityByClassroom(Classroom classroom) {
+        return (List) unavailabilityRepository.findUnavailabilityByClassroom(classroom);
     }
 
     /**
@@ -47,8 +48,8 @@ public class UnavailabilityService {
         unavailability1.setNameIndispo(unavailability.getNameIndispo());
         unavailability1.setStart(unavailability.getStart());
         unavailability1.setEnd(unavailability.getEnd());
-        unavailability1.setProfId(unavailability.getProfId());
-        unavailability1.setClassroomId(unavailability.getClassroomId());
+        unavailability1.setProfessor(unavailability.getProfessor());
+        unavailability1.setClassroom(unavailability.getClassroom());
         unavailability1.setEquipmentId(unavailability.getEquipmentId());
         unavailability1.setStudentClassId(unavailability.getStudentClassId());
         return unavailabilityRepository.save(unavailability1);

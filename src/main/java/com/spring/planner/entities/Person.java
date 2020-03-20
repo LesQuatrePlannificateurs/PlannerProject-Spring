@@ -2,13 +2,11 @@ package com.spring.planner.entities;
 
 import javax.persistence.*;
 
-@Entity
+@MappedSuperclass
 @Inheritance(strategy=InheritanceType.TABLE_PER_CLASS)
 public abstract class Person {
 
-    @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
-    Long id;
+
     String login;
     String password;
     String firstname;
@@ -23,14 +21,14 @@ public abstract class Person {
         this.firstname=firstname;
         this.lastname=lastname;
     }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
+//
+//    public Long getId() {
+//        return pid;
+//    }
+//
+//    public void setId(Long id) {
+//        this.pid = id;
+//    }
 
     public String getLogin() {
         return login;
