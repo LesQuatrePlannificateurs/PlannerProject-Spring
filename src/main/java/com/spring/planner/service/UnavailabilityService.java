@@ -18,7 +18,7 @@ public class UnavailabilityService {
 
     /**
      * find all unavailabilities for a specific Classroom
-     * @param id of the classroom
+     * @param classroomId of the classroom
      * @return a list of unavailabilities for this classroom Id
      */
     public List findUnavailibilityByClassroomId(Long classroomId) {
@@ -51,7 +51,7 @@ public class UnavailabilityService {
         unavailability1.setProfessor(unavailability.getProfessor());
         unavailability1.setClassroom(unavailability.getClassroom());
         unavailability1.setEquipmentId(unavailability.getEquipmentId());
-        unavailability1.setStudentClassId(unavailability.getStudentClassId());
+//        unavailability1.setStudentClassId(unavailability.getStudentClassId());
         return unavailabilityRepository.save(unavailability1);
     }
 
