@@ -18,6 +18,9 @@ public class Classroom {
     public Classroom() {
     }
 
+    public Classroom(String name){
+        this.name=name;
+    }
     public Classroom(Long id, String name) {
     this.id = id;
     this.name = name;

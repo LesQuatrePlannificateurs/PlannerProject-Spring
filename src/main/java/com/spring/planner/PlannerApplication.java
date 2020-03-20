@@ -1,7 +1,9 @@
 package com.spring.planner;
 
+import com.spring.planner.entities.Classroom;
 import com.spring.planner.entities.Professor;
 import com.spring.planner.entities.Unavailability;
+import com.spring.planner.repository.ClassroomRepository;
 import com.spring.planner.repository.ProfessorReporitory;
 import com.spring.planner.repository.UnavailabilityRepository;
 import org.springframework.boot.CommandLineRunner;
@@ -23,8 +25,9 @@ public class PlannerApplication {
             return new CommandLineRunner() {
                 @Override
                 public void run(String... args) throws Exception {
-                    repository.save(new Unavailability("histoire", "14h00","15h00",2L, 3L,12L,23L));
-                    repository.save(new Unavailability("math", "08h00","10h00",4L,6L,13L,1L));
+                    repository.save(new Unavailability("histoire", "11/03/2020 14:00:00","11/03/2020 15:00:00",2L, 1L,12L,23L));
+                    repository.save(new Unavailability("histoire", "10/03/2020 14:00:00","10/03/2020 15:00:00",4L,1L,13L,1L));
+                    repository.save(new Unavailability("math", "13/03/2020 10:00:00","13/03/2020 12:00:00",4L,1L,13L,1L));
                     System.out.println("Unavailabilities added");
                 }
             };
@@ -41,6 +44,20 @@ public class PlannerApplication {
                 public void run(String... args) throws Exception {
                     repository.save(new Professor("Audenb", "blabla","Aude","NB"));
                     System.out.println("Professor added");
+                }
+            };
+        }
+
+
+    }
+    @Bean
+    public CommandLineRunner demo3(ClassroomRepository repository1) {
+        {
+            return new CommandLineRunner() {
+                @Override
+                public void run(String... args) throws Exception {
+                    repository1.save(new Classroom("salle visio"));
+                    System.out.println("Classroom added");
                 }
             };
         }
