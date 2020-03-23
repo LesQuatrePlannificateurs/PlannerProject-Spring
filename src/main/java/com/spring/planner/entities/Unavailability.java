@@ -30,8 +30,8 @@ public class Unavailability {
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     Long id;
     String nameIndispo;
-    String start= new Date().toString();
-    String end= new Date().toString();
+    String start;
+    String end;
     @OneToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name = "professorId")
     Professor professor;
@@ -41,21 +41,26 @@ public class Unavailability {
     @OneToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name="studentClassId")
     StudentClass studentClass;
-    Long equipmentId; // ç changer en Equipment
+    @OneToOne
+    @JoinColumn(name = "equipmentId")
+    Equipment equipment;
+
 
 
     public Unavailability() {
     }
 
 
-    public Unavailability(String nameIndispo, String start, String end, Professor professor, Classroom classroom,StudentClass studentClass, Long equipmentId) {
+    public Unavailability(String nameIndispo, String start, String end, Professor professor, Classroom classroom,StudentClass studentClass, Equipment equipment) {
+
         this.nameIndispo = nameIndispo;
         this.start = start;
         this.end = end;
         this.professor = professor;
         this.classroom = classroom;
-        this.equipmentId = equipmentId;
         this.studentClass = studentClass;
+        this.equipment = equipment;
+
     }
 
     public StudentClass  getStudentClass() {
@@ -82,12 +87,12 @@ public class Unavailability {
         this.classroom = classroom;
     }
 
-    public Long getEquipmentId() {
-        return equipmentId;
+    public Equipment getEquipment() {
+        return equipment;
     }
 
-    public void setEquipmentId(Long equipmentId) {
-        this.equipmentId = equipmentId;
+    public void setEquipmentId(Equipment equipment) {
+        this.equipment = equipment;
     }
 
     public Long getId() {

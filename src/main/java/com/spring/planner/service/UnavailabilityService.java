@@ -60,8 +60,7 @@ public class UnavailabilityService {
      * @param id unavailability's id to delete
      */
     public void deleteUnavailabilityById(Long id){
-        Unavailability unavailability = unavailabilityRepository.findById(id).orElse(null);
-        unavailabilityRepository.delete(unavailability);
+        unavailabilityRepository.deleteById(id);
     }
 
     /**
