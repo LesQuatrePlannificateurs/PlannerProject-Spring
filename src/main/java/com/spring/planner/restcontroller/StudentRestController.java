@@ -7,13 +7,11 @@ import com.spring.planner.service.StudentClassService;
 import com.spring.planner.service.StudentService;
 import com.spring.planner.service.UnavailabilityService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
+@RestController
+@RequestMapping("/api")
 public class StudentRestController {
     @Autowired
     StudentClassService studentClassService;
@@ -49,5 +47,3 @@ public class StudentRestController {
         return studentService.getAllStudentByStudentClassId(studentClassId);
     }
 }
-
-// allStudent byStudentClass
