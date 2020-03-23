@@ -38,32 +38,37 @@ public class Unavailability {
     @OneToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name = "classroomId")
     Classroom classroom;
-    Long studentClassId; // à changer en StudentClass
+    @OneToOne(cascade = CascadeType.MERGE)
+    @JoinColumn(name="studentClassId")
+    StudentClass studentClass;
     @OneToOne
     @JoinColumn(name = "equipmentId")
     Equipment equipment;
+
 
 
     public Unavailability() {
     }
 
 
-    public Unavailability(String nameIndispo, String start, String end, Professor professor, Classroom classroom,Long studentClassId, Equipment equipment) {
+    public Unavailability(String nameIndispo, String start, String end, Professor professor, Classroom classroom,StudentClass studentClass, Equipment equipment) {
+
         this.nameIndispo = nameIndispo;
         this.start = start;
         this.end = end;
         this.professor = professor;
         this.classroom = classroom;
+        this.studentClass = studentClass;
         this.equipment = equipment;
-        this.studentClassId=studentClassId;
+
     }
 
-    public Long getStudentClassId() {
-        return studentClassId;
+    public StudentClass  getStudentClass() {
+        return studentClass;
     }
 
-    public void setStudentClassId(Long studentClassId) {
-        this.studentClassId = studentClassId;
+    public void setStudentClass(StudentClass studentClass) {
+        this.studentClass = studentClass;
     }
 
     public Professor getProfessor() {

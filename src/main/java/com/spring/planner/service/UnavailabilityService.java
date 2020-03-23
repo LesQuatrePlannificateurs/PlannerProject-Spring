@@ -51,7 +51,7 @@ public class UnavailabilityService {
         unavailability1.setProfessor(unavailability.getProfessor());
         unavailability1.setClassroom(unavailability.getClassroom());
         unavailability1.setEquipmentId(unavailability.getEquipmentId());
-        unavailability1.setStudentClassId(unavailability.getStudentClassId());
+        unavailability1.setStudentClass(unavailability.getStudentClass());
         return unavailabilityRepository.save(unavailability1);
     }
 

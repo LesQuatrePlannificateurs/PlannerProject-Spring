@@ -32,7 +32,6 @@ public class UnavailabilityRestController {
     public void deleteUnavailabilityById(@PathVariable("id")Long id){
         unavailabilityService.deleteUnavailabilityById(id);
     }
-
     /**
      * Update an existing unavailability
      * @param unavailability is the update unavailability
