@@ -49,11 +49,8 @@ public class StudentClassService {
         return (List<StudentClass>) studentClassRepository.findAll();
     }
 
-    public StudentClass updateStudentClass(StudentClass studentClass , Long id) {
-        StudentClass studentClass1 = this.findStudentClassById(id);
-        studentClass1.setName(studentClass.getName());
-        return studentClassRepository.save(studentClass1);
-    }
+    
+
 }
 
 
