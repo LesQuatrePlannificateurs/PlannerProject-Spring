@@ -16,4 +16,7 @@ public interface UnavailabilityRepository extends CrudRepository<Unavailability,
 
     @Query("SELECT u FROM Unavailability u WHERE u.professor=:param")
     Iterable<Unavailability> findUnavailabilityByProfessorId(@Param("param")Long id);
+
+    @Query("SELECT u FROM Unavailability u WHERE u.studentClass=:param")
+    Iterable<Unavailability> findUnavailabilityByStudentClassId(@Param("param")Long id);
 }

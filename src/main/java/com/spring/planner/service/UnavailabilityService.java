@@ -24,7 +24,14 @@ public class UnavailabilityService {
     public List findUnavailibilityByClassroomId(Long classroomId) {
         return (List) unavailabilityRepository.findUnavailabilityByClassroomId(classroomId);
     }
-
+    /**
+     * find all unavailabilities for a specific StudentClass
+     * @param studentClassId of the studentClass
+     * @return a list of unavailabilities for this studentClass id
+     */
+    public List findUnavailibilityByStudentClassId(Long studentClassId) {
+        return (List) unavailabilityRepository.findUnavailabilityByStudentClassId(studentClassId);
+    }
     /**
      * find a professor planning thanks to his id
      * @param id id of the professor
