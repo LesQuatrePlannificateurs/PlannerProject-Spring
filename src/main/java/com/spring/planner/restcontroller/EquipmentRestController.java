@@ -40,4 +40,5 @@ public class EquipmentRestController {
         return equipmentService.findEquipmentById(id);
     }
 
+    //find all equipments
 }
