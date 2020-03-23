@@ -6,6 +6,9 @@ import javax.persistence.*;
 @Table(name="professor")
 public class Professor extends Person {
 
+    @Id
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    private Long professorId;
 
     public Professor() {
         super();
@@ -15,6 +18,11 @@ public class Professor extends Person {
         super(login,psw,firstname,lastname);
     }
 
+    public Long getProfessorId() {
+        return professorId;
+    }
 
-
+    public void setProfessorId(Long professorId) {
+        this.professorId = professorId;
+    }
 }

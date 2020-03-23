@@ -27,61 +27,83 @@ import java.util.Date;
 public class Unavailability {
 
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     Long id;
     String nameIndispo;
-    String start= new Date().toString();
-    String end= new Date().toString();
-    Long profId;
-    Long classroomId;
-    Long studentClassId;
-    Long equipmentId;
+    String start;
+    String end;
+    @OneToOne(cascade = CascadeType.MERGE)
+    @JoinColumn(name = "professorId")
+    Professor professor;
+    @OneToOne(cascade = CascadeType.MERGE)
+    @JoinColumn(name = "classroomId")
+    Classroom classroom;
+    @OneToOne(cascade = CascadeType.MERGE)
+    @JoinColumn(name="studentClassId")
+    StudentClass studentClass;
+    @OneToOne(cascade = CascadeType.MERGE)
+    @JoinColumn(name = "equipmentId")
+    Equipment equipment;
+
 
 
     public Unavailability() {
     }
 
 
-    public Unavailability(String nameIndispo, String start, String end, Long profId, Long classroomId,Long studentClassId, Long equipmentId) {
+    public Unavailability(String nameIndispo, String start, String end, Professor professor, Classroom classroom,StudentClass studentClass, Equipment equipment) {
+
         this.nameIndispo = nameIndispo;
         this.start = start;
         this.end = end;
-        this.profId = profId;
-        this.classroomId = classroomId;
-        this.equipmentId = equipmentId;
-        this.studentClassId=studentClassId;
+        this.professor = professor;
+        this.classroom = classroom;
+        this.studentClass = studentClass;
+        this.equipment = equipment;
+
+    }
+    public Unavailability(String nameIndispo, String start, String end, Professor professor, Classroom classroom,StudentClass studentClass) {
+
+        this.nameIndispo = nameIndispo;
+        this.start = start;
+        this.end = end;
+        this.professor = professor;
+        this.classroom = classroom;
+        this.studentClass = studentClass;
+
     }
 
-    public Long getStudentClassId() {
-        return studentClassId;
+
+    public StudentClass  getStudentClass() {
+        return studentClass;
     }
 
-    public void setStudentClassId(Long studentClassId) {
-        this.studentClassId = studentClassId;
+    public void setStudentClass(StudentClass studentClass) {
+        this.studentClass = studentClass;
     }
 
-    public Long getProfId() {
-        return profId;
+    public Professor getProfessor() {
+        return professor;
     }
 
-    public void setProfId(Long profId) {
-        this.profId = profId;
+    public void setProfessor(Professor professor) {
+        this.professor = professor;
     }
 
-    public Long getClassroomId() {
-        return classroomId;
+    public Classroom getClassroom() {
+        return classroom;
     }
 
-    public void setClassroomId(Long classroomId) {
-        this.classroomId = classroomId;
+    public void setClassroom(Classroom classroom) {
+        this.classroom = classroom;
     }
 
-    public Long getEquipmentId() {
-        return equipmentId;
+    public Equipment getEquipment() {
+        return equipment;
     }
 
-    public void setEquipmentId(Long equipmentId) {
-        this.equipmentId = equipmentId;
+    public void setEquipment(Equipment equipment) {
+        this.equipment = equipment;
     }
 
     public Long getId() {

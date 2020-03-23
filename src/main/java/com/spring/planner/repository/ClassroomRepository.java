@@ -6,7 +6,7 @@ import org.springframework.data.repository.CrudRepository;
 
 public interface ClassroomRepository extends CrudRepository<Classroom, Long> {
 
-// Cette classe nous permet de trouver une ClassroomName by id, ou d'ajouter/delete une classeroom
+// Cette classe nous permet de trouver une ClassroomName by id, ou d'ajouter/delete une classroom
 
 
 

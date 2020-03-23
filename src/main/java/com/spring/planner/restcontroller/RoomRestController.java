@@ -2,6 +2,7 @@ package com.spring.planner.restcontroller;
 
 import com.spring.planner.entities.Classroom;
 import com.spring.planner.entities.Unavailability;
+import com.spring.planner.exception.UserDoesNotExistException;
 import com.spring.planner.service.ClassroomService;
 import com.spring.planner.service.UnavailabilityService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
+//@CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping("/api")
 public class RoomRestController {
 
@@ -23,12 +24,12 @@ public class RoomRestController {
 
     /**
      * Get a specific Classroom planning thanks to the classroom Id
-     * @param id id of the specific classroom
+     * @param classroomId id of the specific classroom
      * @return a list of unavailabilities for this classroom
      */
     @RequestMapping("/classroomsPlanning/{id}")
-    public List<Unavailability> getPlanningClassroom(@PathVariable("id")Long id){
-        List unaList = unavailabilityService.findUnavailibilityByClassroomId(id) ;
+    public List<Unavailability> getPlanningClassroom(@PathVariable("id")Long classroomId){
+        List unaList = unavailabilityService.findUnavailibilityByClassroomId(classroomId) ;
         return unaList;
     }
 
@@ -39,7 +40,12 @@ public class RoomRestController {
      */
     @RequestMapping("/classrooms/{id}")
     public Classroom findClassroomById(@PathVariable("id")Long id){
-        return classroomService.findClassroombyId(id);
+        try {
+            return classroomService.findClassroombyId(id);
+        }catch (UserDoesNotExistException u){
+            u.printStackTrace();
+        }
+        return null;
     }
 
     /**

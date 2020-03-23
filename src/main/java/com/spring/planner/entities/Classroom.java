@@ -12,7 +12,7 @@ public class Classroom {
 
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
-    private Long id;
+    private Long classroomId;
     private String name;
 
     public Classroom() {
@@ -21,17 +21,13 @@ public class Classroom {
     public Classroom(String name){
         this.name=name;
     }
-    public Classroom(Long id, String name) {
-    this.id = id;
-    this.name = name;
-    }
 
     public Long getId() {
-        return id;
+        return classroomId;
     }
 
     public void setId(Long id) {
-        this.id = id;
+        this.classroomId = id;
     }
 
     public String getName() {

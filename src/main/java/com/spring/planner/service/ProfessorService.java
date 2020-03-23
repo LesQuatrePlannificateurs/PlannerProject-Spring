@@ -5,6 +5,8 @@ import com.spring.planner.repository.ProfessorReporitory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class ProfessorService {
 
@@ -33,4 +35,7 @@ public class ProfessorService {
         professorRepository.deleteById(id);
     }
 
+    public List<Professor> findAllProfessors(){
+        return (List<Professor>) professorRepository.findAll();
+    }
 }

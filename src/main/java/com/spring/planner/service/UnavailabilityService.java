@@ -1,8 +1,10 @@
 package com.spring.planner.service;
 
 
+import com.spring.planner.entities.Classroom;
 import com.spring.planner.entities.Unavailability;
 import com.spring.planner.repository.UnavailabilityRepository;
+import com.sun.javafx.UnmodifiableArrayList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Service;
@@ -17,13 +19,20 @@ public class UnavailabilityService {
 
     /**
      * find all unavailabilities for a specific Classroom
-     * @param id of the classroom
+     * @param classroomId of the classroom
      * @return a list of unavailabilities for this classroom Id
      */
-    public List findUnavailibilityByClassroomId(Long id) {
-        return (List) unavailabilityRepository.findUnavailabilityByClassroomId(id);
+    public List findUnavailibilityByClassroomId(Long classroomId) {
+        return (List) unavailabilityRepository.findUnavailabilityByClassroomId(classroomId);
     }
-
+    /**
+     * find all unavailabilities for a specific StudentClass
+     * @param studentClassId of the studentClass
+     * @return a list of unavailabilities for this studentClass id
+     */
+    public List findUnavailibilityByStudentClassId(Long studentClassId) {
+        return (List) unavailabilityRepository.findUnavailabilityByStudentClassId(studentClassId);
+    }
     /**
      * find a professor planning thanks to his id
      * @param id id of the professor
@@ -31,6 +40,10 @@ public class UnavailabilityService {
      */
     public List findUnavailibilityByProfessorId(Long id){
         return (List) unavailabilityRepository.findUnavailabilityByProfessorId(id);
+    }
+
+    public List findUnavailabilityByEquipmentId(Long id){
+        return (List) unavailabilityRepository.findUnavailabilityByEquipmentId(id);
     }
 
     /**
@@ -47,10 +60,10 @@ public class UnavailabilityService {
         unavailability1.setNameIndispo(unavailability.getNameIndispo());
         unavailability1.setStart(unavailability.getStart());
         unavailability1.setEnd(unavailability.getEnd());
-        unavailability1.setProfId(unavailability.getProfId());
-        unavailability1.setClassroomId(unavailability.getClassroomId());
-        unavailability1.setEquipmentId(unavailability.getEquipmentId());
-        unavailability1.setStudentClassId(unavailability.getStudentClassId());
+        unavailability1.setProfessor(unavailability.getProfessor());
+        unavailability1.setClassroom(unavailability.getClassroom());
+        unavailability1.setEquipment(unavailability.getEquipment());
+        unavailability1.setStudentClass(unavailability.getStudentClass());
         return unavailabilityRepository.save(unavailability1);
     }
 
@@ -59,8 +72,7 @@ public class UnavailabilityService {
      * @param id unavailability's id to delete
      */
     public void deleteUnavailabilityById(Long id){
-        Unavailability unavailability = unavailabilityRepository.findById(id).orElse(null);
-        unavailabilityRepository.delete(unavailability);
+        unavailabilityRepository.deleteById(id);
     }
 
     /**
