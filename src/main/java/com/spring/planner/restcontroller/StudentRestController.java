@@ -30,8 +30,7 @@ public class StudentRestController {
     }
 
     @RequestMapping(value = "/deletestudent/{id}")
-    public void deletestudentById(@PathVariable("id")Long id){
-        studentService.deleteStudentById(id);
+    public void deletestudentById(@PathVariable("id")Long id){ studentService.deleteStudentById(id);
     }
 
     @RequestMapping(value="allstudentByClassId/{id}")

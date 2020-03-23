@@ -15,11 +15,13 @@ public class PlannerApplication {
     }
 
     @Bean
-    public CommandLineRunner demo(UnavailabilityRepository urepository, ProfessorReporitory pRreporitory, ClassroomRepository clrepository, StudentClassRepository strepository, EquipmentRepository equipmentRepository) {
+    public CommandLineRunner demo(UnavailabilityRepository urepository, ProfessorReporitory pRreporitory, ClassroomRepository clrepository,
+                                  StudentClassRepository strepository, EquipmentRepository equipmentRepository, StudentRepository stRepo) {
         {
             return new CommandLineRunner() {
                 @Override
                 public void run(String... args) throws Exception {
+
                     Professor professor = new Professor("Audenb", "blabla","Aude","NB");
                     pRreporitory.save(professor);
                     Equipment equipment = new Equipment("video projecteur");
@@ -28,6 +30,10 @@ public class PlannerApplication {
                     clrepository.save(classroom);
                     StudentClass stClass = new StudentClass("5èmeB");
                     strepository.save(stClass);
+                    Student student = new Student("Akim", "lou","akim","NB",stClass );
+                    Student student1 = new Student("Mat", "loulou","mat","Port",stClass);
+                    stRepo.save(student);
+                    stRepo.save(student1);
                     urepository.save(new Unavailability("Histoire", "03/18/2020 09:00:00","03/18/2020 12:00:00",professor, classroom,stClass,equipment));
                     urepository.save(new Unavailability("Français", "03/19//2020 14:00:00","03/19/2020 17:00:00",professor,classroom,stClass,equipment));
                     urepository.save(new Unavailability("Maths", "03/20/2020 08:00:00","03/20/2020 12:00:00",professor,classroom,stClass,equipment));
