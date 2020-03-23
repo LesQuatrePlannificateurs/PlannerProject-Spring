@@ -2,6 +2,7 @@ package com.spring.planner.restcontroller;
 
 import com.spring.planner.entities.Classroom;
 import com.spring.planner.entities.Unavailability;
+import com.spring.planner.exception.UserDoesNotExistException;
 import com.spring.planner.service.ClassroomService;
 import com.spring.planner.service.UnavailabilityService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,7 +40,12 @@ public class RoomRestController {
      */
     @RequestMapping("/classrooms/{id}")
     public Classroom findClassroomById(@PathVariable("id")Long id){
-        return classroomService.findClassroombyId(id);
+        try {
+            return classroomService.findClassroombyId(id);
+        }catch (UserDoesNotExistException u){
+            u.printStackTrace();
+        }
+        return null;
     }
 
     /**

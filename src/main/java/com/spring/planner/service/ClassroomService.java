@@ -1,6 +1,7 @@
 package com.spring.planner.service;
 
 import com.spring.planner.entities.Classroom;
+import com.spring.planner.exception.UserDoesNotExistException;
 import com.spring.planner.repository.ClassroomRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,8 +21,12 @@ public class ClassroomService {
      * @param id of the specific classroom
      * @return a classroom if it exists, else return null
      */
-    public Classroom findClassroombyId(Long id){
-        return classroomRepository.findById(id).orElse(null);
+    public Classroom findClassroombyId(Long id) throws UserDoesNotExistException{
+        Classroom classroom = classroomRepository.findById(id).orElseThrow(UserDoesNotExistException::new);
+        if (classroom == null){
+            throw new UserDoesNotExistException();
+        }else
+        return classroom;
     }
 
     /**

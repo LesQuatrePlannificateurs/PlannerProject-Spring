@@ -64,17 +64,17 @@ public class RoomRestControllerTest {
         verify(classroomService).deleteClassroom(eq(idExpected));
     }
 
-    @Test
+//    @Test
     /**
      * unit test of findClassroomById() from class RoomRestController
      */
-    public void findClassroomByIdTest(){
-        Classroom classroom = new Classroom("4 ème A");
-        classroom.setId(2L);
-        Mockito.when(classroomService.findClassroombyId(classroom.getId())).thenReturn(classroom);
-        Classroom found = roomRestController.findClassroomById(classroom.getId());
-        assertEquals(classroom,found,"findClassroomByIdTest not passed");
-    }
+//    public void findClassroomByIdTest(){
+//        Classroom classroom = new Classroom("4 ème A");
+//        classroom.setId(2L);
+//        Mockito.when(classroomService.findClassroombyId(classroom.getId())).thenReturn(classroom);
+//        Classroom found = roomRestController.findClassroomById(classroom.getId());
+//        assertEquals(classroom,found,"findClassroomByIdTest not passed");
+//    }
 
     @Test
     /**

@@ -30,7 +30,7 @@ public class DirectorRestController {
         return directorService.findAllDirectors();
     }
 
-    @RequestMapping(value = "/finddirectorbyId/{id}")
+    @RequestMapping(value = "/finddirectorbyid/{id}")
     public Director findDirectorById(@PathVariable("id") Long id){
         return directorService.findDirectorById(id);
     }
