@@ -25,4 +25,8 @@ public class DirectorService {
        return (List<Director>) directorRepository.findAll();
     }
 
+    public Director findDirectorById(Long id){
+        return directorRepository.findById(id).orElse(null);
+    }
+
 }

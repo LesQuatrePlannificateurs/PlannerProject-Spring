@@ -35,4 +35,9 @@ public class EquipmentRestController {
         equipmentService.deleteEquipmentById(id);
     }
 
+    @RequestMapping(value = "/findequipmentbyid/{id}")
+    public Equipment findEquipmentById(@PathVariable("id") Long id){
+        return equipmentService.findEquipmentById(id);
+    }
+
 }

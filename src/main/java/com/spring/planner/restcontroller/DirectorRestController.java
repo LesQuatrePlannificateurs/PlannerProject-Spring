@@ -29,4 +29,9 @@ public class DirectorRestController {
     public List<Director> findAllDirectors(){
         return directorService.findAllDirectors();
     }
+
+    @RequestMapping(value = "/finddirectorbyId/{id}")
+    public Director findDirectorById(@PathVariable("id") Long id){
+        return directorService.findDirectorById(id);
+    }
 }

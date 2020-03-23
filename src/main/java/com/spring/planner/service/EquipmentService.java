@@ -22,5 +22,7 @@ public class EquipmentService {
         equipmentRepository.deleteById(id);
     }
 
-
+    public Equipment findEquipmentById(Long id){
+        return equipmentRepository.findById(id).orElse(null);
+    }
 }

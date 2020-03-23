@@ -24,6 +24,7 @@ public class StudentClass {
     public StudentClass(String name) {
         this.name = name;
     }
+
     public Long getStudentClassId() {
         return studentClassId;
     }
