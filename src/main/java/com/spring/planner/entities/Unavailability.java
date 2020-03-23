@@ -62,6 +62,17 @@ public class Unavailability {
         this.equipment = equipment;
 
     }
+    public Unavailability(String nameIndispo, String start, String end, Professor professor, Classroom classroom,StudentClass studentClass) {
+
+        this.nameIndispo = nameIndispo;
+        this.start = start;
+        this.end = end;
+        this.professor = professor;
+        this.classroom = classroom;
+        this.studentClass = studentClass;
+
+    }
+
 
     public StudentClass  getStudentClass() {
         return studentClass;
@@ -91,7 +102,7 @@ public class Unavailability {
         return equipment;
     }
 
-    public void setEquipmentId(Equipment equipment) {
+    public void setEquipment(Equipment equipment) {
         this.equipment = equipment;
     }
 
