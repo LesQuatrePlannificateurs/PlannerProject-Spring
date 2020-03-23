@@ -27,26 +27,30 @@ public class ProfessorRestController {
      * @param id id of the professor
      * @return the list of unavailabilities of the professor
      */
-    @RequestMapping(value = "/professorplanning/{id}")
+    @RequestMapping(value = "/professorsplanning/{id}")
     public List<Unavailability> professorPlanningById(@PathVariable("id") Long id){
         return unavailabilityService.findUnavailibilityByProfessorId(id);
     }
 
-    @RequestMapping(value = "/addprofessor", method = RequestMethod.POST)
+    @RequestMapping(value = "/addprofessors", method = RequestMethod.POST)
     public Professor addProfessor(@RequestBody Professor professor){
         return professorService.addProfessor(professor);
     }
 
-    @RequestMapping(value = "/findprofessor/{id}")
+    @RequestMapping(value = "/findprofessors/{id}")
     public Professor findProfessorById(@PathVariable("id") Long id){
         return professorService.findProfessorById(id);
     }
 
     @RequestMapping(value = "/deleteprofessor/{id}")
-    public void deleProfessorById(@PathVariable("id")Long id){
+    public void deleteProfessorById(@PathVariable("id")Long id){
         professorService.deleteProfessorById(id);
     }
 
+    @RequestMapping(value = "/findallprofessors")
+    public List<Professor> findAllProfessors(){
+        return professorService.findAllProfessors();
+    }
 
 
 }

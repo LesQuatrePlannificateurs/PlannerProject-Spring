@@ -5,6 +5,8 @@ import com.spring.planner.repository.DirectorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class DirectorService {
 
@@ -17,6 +19,10 @@ public class DirectorService {
 
     public void deleteDirectorById(Long id){
         directorRepository.deleteById(id);
+    }
+
+    public List<Director> findAllDirectors(){
+       return (List<Director>) directorRepository.findAll();
     }
 
 }

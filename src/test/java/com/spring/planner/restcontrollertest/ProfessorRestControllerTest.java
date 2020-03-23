@@ -60,7 +60,7 @@ public class ProfessorRestControllerTest {
      */
     public void deleteProfessorByIdTest(){
         Long idExpected = 3L;
-        professorRestController.deleProfessorById(idExpected);
+        professorRestController.deleteProfessorById(idExpected);
         verify(professorService).deleteProfessorById(eq(idExpected));
     }
 }
