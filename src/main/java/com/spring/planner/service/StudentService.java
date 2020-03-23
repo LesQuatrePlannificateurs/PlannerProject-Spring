@@ -1,7 +1,6 @@
 package com.spring.planner.service;
 
 import com.spring.planner.entities.Student;
-import com.spring.planner.entities.Unavailability;
 import com.spring.planner.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -46,5 +45,10 @@ public class StudentService {
     public List<Student> getAllStudent(){
         return (List<Student>) studentRepository.findAll();
     }
+
+    public List<Student> getAllStudentByStudentClassId(Long studentClassId){
+        return (List<Student>) studentRepository.findAllStudentByStudentClassId(studentClassId);
+    }
+
 
 }

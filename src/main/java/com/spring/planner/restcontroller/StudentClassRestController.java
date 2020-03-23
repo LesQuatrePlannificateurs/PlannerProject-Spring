@@ -4,17 +4,14 @@ import com.spring.planner.entities.Classroom;
 import com.spring.planner.entities.Student;
 import com.spring.planner.entities.StudentClass;
 import com.spring.planner.entities.Unavailability;
-import com.spring.planner.service.ClassroomService;
+
 import com.spring.planner.service.StudentClassService;
 import com.spring.planner.service.UnavailabilityService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
+@RestController
 public class StudentClassRestController {
     @Autowired
     StudentClassService studentClassService;

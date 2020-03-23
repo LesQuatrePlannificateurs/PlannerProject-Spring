@@ -49,9 +49,6 @@ public class StudentClassService {
         return (List<StudentClass>) studentClassRepository.findAll();
     }
 
-    
-
 }
-
 
 

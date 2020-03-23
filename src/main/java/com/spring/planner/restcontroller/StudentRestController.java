@@ -43,4 +43,11 @@ public class StudentRestController {
         studentService.deleteStudentById(id);
     }
 
+    @RequestMapping(value="allstudentByClassId/{id}")
+    public List<Student> getAllStudentsByStudentClassId(Long studentClassId){
+        StudentClass studentClass = studentClassService.findStudentClassById(studentClassId);
+        return studentService.getAllStudentByStudentClassId(studentClassId);
+    }
 }
+
+// allStudent byStudentClass
