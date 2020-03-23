@@ -17,14 +17,7 @@ public class StudentRestController {
     StudentClassService studentClassService;
     @Autowired
     StudentService studentService;
-    @Autowired
-    UnavailabilityService unavailabilityService;
 
-    @RequestMapping(value="studentPlanning/{id}")
-    public List<Unavailability> getPlanningStudent(@PathVariable("id")Long studentId){
-        Student student = studentService.findStudentById(studentId);
-        return unavailabilityService.findUnavailibilityByStudentClassId(student.getStudentClass().getStudentClassId());
-    }
 
     @RequestMapping(value = "/addstudent", method = RequestMethod.POST)
     public Student addStudent(@RequestBody Student student){
@@ -43,7 +36,6 @@ public class StudentRestController {
 
     @RequestMapping(value="allstudentByClassId/{id}")
     public List<Student> getAllStudentsByStudentClassId(@PathVariable("id")Long studentClassId){
-        StudentClass studentClass = studentClassService.findStudentClassById(studentClassId);
         return studentService.getAllStudentByStudentClassId(studentClassId);
     }
 }
