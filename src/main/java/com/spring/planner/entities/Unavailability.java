@@ -41,7 +41,7 @@ public class Unavailability {
     @OneToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name="studentClassId")
     StudentClass studentClass;
-    @OneToOne
+    @OneToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name = "equipmentId")
     Equipment equipment;
 
