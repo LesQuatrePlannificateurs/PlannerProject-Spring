@@ -31,7 +31,6 @@ public class UnavailabilityRestController {
     @RequestMapping("/deleteunavailability/{id}")
     public void deleteUnavailabilityById(@PathVariable("id")Long id){
         unavailabilityService.deleteUnavailabilityById(id);
-
     }
 
     /**
