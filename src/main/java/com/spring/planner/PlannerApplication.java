@@ -1,9 +1,6 @@
 package com.spring.planner;
 
-import com.spring.planner.entities.Classroom;
-import com.spring.planner.entities.Professor;
-import com.spring.planner.entities.StudentClass;
-import com.spring.planner.entities.Unavailability;
+import com.spring.planner.entities.*;
 import com.spring.planner.repository.*;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -18,20 +15,22 @@ public class PlannerApplication {
     }
 
     @Bean
-    public CommandLineRunner demo(UnavailabilityRepository urepository, ProfessorReporitory pRreporitory, ClassroomRepository clrepository, StudentClassRepository strepository) {
+    public CommandLineRunner demo(UnavailabilityRepository urepository, ProfessorReporitory pRreporitory, ClassroomRepository clrepository, StudentClassRepository strepository, EquipmentRepository equipmentRepository) {
         {
             return new CommandLineRunner() {
                 @Override
                 public void run(String... args) throws Exception {
                     Professor professor = new Professor("Audenb", "blabla","Aude","NB");
                     pRreporitory.save(professor);
+                    Equipment equipment = new Equipment("video projecteur");
+                    equipmentRepository.save(equipment);
                     Classroom classroom = new Classroom("salle visio");
                     clrepository.save(classroom);
                     StudentClass stClass = new StudentClass("5èmeB");
                     strepository.save(stClass);
-                    urepository.save(new Unavailability("Histoire", "03/18/2020 09:00:00","03/18/2020 12:00:00",professor, classroom,stClass));
-                    urepository.save(new Unavailability("Français", "03/19//2020 14:00:00","03/19/2020 17:00:00",professor,classroom,stClass));
-                    urepository.save(new Unavailability("Maths", "03/20/2020 08:00:00","03/20/2020 12:00:00",professor,classroom,stClass));
+                    urepository.save(new Unavailability("Histoire", "03/18/2020 09:00:00","03/18/2020 12:00:00",professor, classroom,stClass,equipment));
+                    urepository.save(new Unavailability("Français", "03/19//2020 14:00:00","03/19/2020 17:00:00",professor,classroom,stClass,equipment));
+                    urepository.save(new Unavailability("Maths", "03/20/2020 08:00:00","03/20/2020 12:00:00",professor,classroom,stClass,equipment));
                     System.out.println("Unavailabilities added");
                 }
             };

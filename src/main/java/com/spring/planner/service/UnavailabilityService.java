@@ -4,6 +4,7 @@ package com.spring.planner.service;
 import com.spring.planner.entities.Classroom;
 import com.spring.planner.entities.Unavailability;
 import com.spring.planner.repository.UnavailabilityRepository;
+import com.sun.javafx.UnmodifiableArrayList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Service;
@@ -32,6 +33,10 @@ public class UnavailabilityService {
      */
     public List findUnavailibilityByProfessorId(Long id){
         return (List) unavailabilityRepository.findUnavailabilityByProfessorId(id);
+    }
+
+    public List findUnavailabilityByEquipmentId(Long id){
+        return (List) unavailabilityRepository.findUnavailabilityByEquipmentId(id);
     }
 
     /**
