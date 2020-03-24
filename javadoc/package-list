@@ -1,5 +1,8 @@
 com.spring.planner
 com.spring.planner.entities
+com.spring.planner.exception
 com.spring.planner.repository
 com.spring.planner.restcontroller
+com.spring.planner.restcontrollertest
 com.spring.planner.service
+com.spring.planner.servicetest

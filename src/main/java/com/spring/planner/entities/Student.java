@@ -7,7 +7,7 @@ import javax.persistence.*;
  * It extends from the Super class de Person.
  * Student principal attribute for the is there StudentClass.
  * This Attribute refer to there Grade and special class of there grade
- * @See StudentClass.name.
+ * StudentClass.name.
  */
 @Entity
 @Table

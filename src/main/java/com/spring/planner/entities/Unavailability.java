@@ -14,12 +14,12 @@ import java.util.Date;
  * <li>A moment (date + hour) of start and end.</li>
  * <li>A prof ID.</li>
  * </ul>
- * </br> It can Contain possibly :
+ * It can Contain possibly :
  * <ul>
  * <li>A Classroom ID</li>
  * <li>An equiment ID, use during professor's Lessons</li>
  * </ul>
- * </p>
+ *
  *
  */
 @Entity
