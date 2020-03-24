@@ -2,6 +2,12 @@ package com.spring.planner.entities;
 
 import javax.persistence.*;
 
+/**
+ * This is the super Class abstract of Person.
+ * It extends Director, Professor and Student Class.
+ * In addition to the attributes of Person this class has a Long directorId attribute
+ * This attribute refer to the id of director object
+ */
 @MappedSuperclass
 @Inheritance(strategy=InheritanceType.TABLE_PER_CLASS)
 public abstract class Person {

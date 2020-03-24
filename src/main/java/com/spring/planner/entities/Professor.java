@@ -2,6 +2,12 @@ package com.spring.planner.entities;
 
 import javax.persistence.*;
 
+/**
+ * This is the Class of the Professor Person.
+ * It extends from the Super class Person.
+ * In addition to the attributes of Person this class has a Long professorId attribute
+ * This attribute refer to the id of professor object
+ */
 @Entity
 @Table(name="professor")
 public class Professor extends Person {
