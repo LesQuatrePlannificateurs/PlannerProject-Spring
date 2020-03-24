@@ -22,11 +22,11 @@ public class Classroom {
         this.name=name;
     }
 
-    public Long getId() {
+    public Long getClassroomId() {
         return classroomId;
     }
 
-    public void setId(Long id) {
+    public void setClassroomId(Long id) {
         this.classroomId = id;
     }
 
