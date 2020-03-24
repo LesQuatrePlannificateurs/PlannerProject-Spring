@@ -28,9 +28,9 @@ public class PlannerApplication {
                     clrepository.save(classroom);
                     StudentClass stClass = new StudentClass("5èmeB");
                     strepository.save(stClass);
-                    urepository.save(new Unavailability("Histoire", "03/18/2020 09:00:00","03/18/2020 12:00:00",professor, classroom,stClass,equipment));
-                    urepository.save(new Unavailability("Français", "03/19//2020 14:00:00","03/19/2020 17:00:00",professor,classroom,stClass,equipment));
-                    urepository.save(new Unavailability("Maths", "03/20/2020 08:00:00","03/20/2020 12:00:00",professor,classroom,stClass,equipment));
+                    urepository.save(new Unavailability("Histoire", "03/23/2020 09:00:00","03/23/2020 12:00:00",professor, classroom,stClass,equipment));
+                    urepository.save(new Unavailability("Français", "03/24/2020 14:00:00","03/24/2020 17:00:00",professor,classroom,stClass,equipment));
+                    urepository.save(new Unavailability("Maths", "03/25/2020 08:00:00","03/25/2020 12:00:00",professor,classroom,stClass,equipment));
                     System.out.println("Unavailabilities added");
                 }
             };
