@@ -83,6 +83,49 @@ public class UnavailabilityServiceTest {
 
     @Test
     /**
+     * unit test of findUnavailabilityByStudentClassId() from class UnavailabilityService
+     */
+    public void findUnavailibilityByStudentClassIdTest(){
+        Professor professor = new Professor();
+        professor.setProfessorId(1L);
+        Classroom classroom = new Classroom();
+        Equipment equipment = new Equipment();
+        StudentClass studentClass = new StudentClass("name1");
+        studentClass.setStudentClassId(1L);
+        StudentClass studentClass2 = new StudentClass("name2");
+        studentClass2.setStudentClassId(2L);
+        Unavailability unavailability = new Unavailability("name indispo1","start 1","end 1",professor,classroom,studentClass,equipment);
+        Unavailability unavailability1 = new Unavailability("name indispo2","start 2","end 2",professor,classroom,studentClass2,equipment);
+        Unavailability unavailability2 = new Unavailability("name indispo3","start 3","end 3",professor,classroom,studentClass2,equipment);
+        Iterable<Unavailability>unavailabilityIterable=Arrays.asList(unavailability1,unavailability2);
+        Mockito.when(unavailabilityRepository.findUnavailabilityByStudentClassId(unavailability1.getStudentClass().getStudentClassId())).thenReturn(unavailabilityIterable);
+        assertEquals(unavailabilityService.findUnavailibilityByStudentClassId(unavailability1.getStudentClass().getStudentClassId()).size(),2L, "findUnavailibilityByStudentClassIdTest not passed");
+    }
+
+    @Test
+    /**
+     * unit test of findUnavailabilityByEquipmentIdTest() from class UnavailabilityService
+     */
+    public void findUnavailabilityByEquipmentIdTest(){
+        Professor professor = new Professor();
+        Classroom classroom = new Classroom();
+        StudentClass studentClass = new StudentClass();
+        Equipment equipment = new Equipment("name1");
+        equipment.setEquipmentId(1L);
+        Equipment equipment2 = new Equipment("name2");
+        equipment.setEquipmentId(2L);
+        Unavailability unavailability = new Unavailability("name indispo1","start 1","end 1",professor,classroom,studentClass,equipment);
+        Unavailability unavailability1 = new Unavailability("name indispo2","start 2","end 2",professor,classroom,studentClass,equipment2);
+        Unavailability unavailability2 = new Unavailability("name indispo3","start 3","end 3",professor,classroom,studentClass,equipment2);
+        Iterable<Unavailability>unavailabilityIterable=Arrays.asList(unavailability1,unavailability2);
+        Mockito.when(unavailabilityRepository.findUnavailabilityByEquipmentId(unavailability1.getEquipment().getEquipmentId())).thenReturn(unavailabilityIterable);
+        assertEquals(unavailabilityService.findUnavailabilityByEquipmentId(unavailability1.getStudentClass().getStudentClassId()).size(),2L, "findUnavailibilityByEquipmentIdTest not passed");
+
+    }
+
+
+    @Test
+    /**
      * unit test of deleteUnavailabilityById() from class UnavailabilityService
      */
     public void deleteUnavailabilityByIdTest() {

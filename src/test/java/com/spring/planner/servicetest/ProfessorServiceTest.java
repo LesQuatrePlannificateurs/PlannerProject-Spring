@@ -13,7 +13,10 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.Optional;
+import java.util.stream.StreamSupport;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.AdditionalAnswers.returnsFirstArg;
@@ -64,6 +67,18 @@ public class ProfessorServiceTest {
         Professor found = professorService.findProfessorById(professor.getProfessorId());
         assertEquals(professor,found,"findProfessorByIdTest not passed");
         assertEquals(professor.getProfessorId(),found.getProfessorId(),"findProfessorByIdTest not passed, ID different");
+    }
 
+    @Test
+    /**
+     * unit test of getProfessor() from class ProfessorService
+     */
+    public void findAllProfessorsTest(){
+        Professor professor= new Professor();
+        Professor professor1 = new Professor();
+        Iterable<Professor>professorsIterable= Arrays.asList(professor,professor1);
+        Mockito.when(professorReporitory.findAll()).thenReturn(professorsIterable);
+        List<Professor> listExpected=professorService.findAllProfessors();
+        assertEquals(StreamSupport.stream(professorsIterable.spliterator(),false).count(),listExpected.size(),"getAllProfessorTest not passed");
     }
 }
