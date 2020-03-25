@@ -12,6 +12,7 @@ public abstract class Person {
     String firstname;
     String lastname;
 
+    
     public Person(){
     }
 
