@@ -4,7 +4,7 @@ import javax.persistence.*;
 
 /**
  * This is the Class of the Person Student.
- * It extends from the Super class de Person.
+ * It extends from the Super class Person.
  * Student principal attribute for the is there StudentClass.
  * This Attribute refer to there Grade and special class of there grade
  * StudentClass.name.

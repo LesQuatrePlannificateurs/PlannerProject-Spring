@@ -6,7 +6,6 @@ import javax.persistence.*;
  * This is the Student's grade class.
  * Each student will be attribute to one grade and the special name of their grade.
  * Professor will have to attribute there lessons to a grade and especially named grade like 5ème'B'
- * name,
  * where 'B' is the special attribute of the grade. That is beacause classRoom can contains no more than
  * 25 students for a lesson.
  */
