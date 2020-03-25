@@ -11,8 +11,7 @@ public abstract class Person {
     String password;
     String firstname;
     String lastname;
-
-    
+// blababkabauzfhuihf
     public Person(){
     }
 
