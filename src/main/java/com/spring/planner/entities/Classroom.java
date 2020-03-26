@@ -22,12 +22,12 @@ public class Classroom {
         this.name=name;
     }
 
-    public Long getId() {
+    public Long getClassroomId() {
         return classroomId;
     }
 
-    public void setId(Long id) {
-        this.classroomId = id;
+    public void setClassroomId(Long classroomId) {
+        this.classroomId = classroomId;
     }
 
     public String getName() {

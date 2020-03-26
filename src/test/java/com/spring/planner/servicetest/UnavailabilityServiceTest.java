@@ -45,9 +45,9 @@ public class UnavailabilityServiceTest {
      */
     public void findUnavailibilityByClassroomIdTest(){
         Classroom classroom = new Classroom();
-        classroom.setId(1L);
+        classroom.setClassroomId(1L);
         Classroom classroom2 = new Classroom();
-        classroom2.setId(2L);
+        classroom2.setClassroomId(2L);
         Professor professor = new Professor();
         professor.setProfessorId(1L);
         Equipment equipment = new Equipment();
@@ -56,8 +56,8 @@ public class UnavailabilityServiceTest {
         Unavailability unavailability1 = new Unavailability("name indispo2","start 2","end 2",professor,classroom2,studentClass,equipment);
         Unavailability unavailability2 = new Unavailability("name indispo3","start 3","end 3",professor,classroom,studentClass,equipment);
         Iterable<Unavailability>unavailabilityIterable=Arrays.asList(unavailability,unavailability2);
-        Mockito.when(unavailabilityRepository.findUnavailabilityByClassroomId(unavailability.getClassroom().getId())).thenReturn(unavailabilityIterable);
-        assertEquals(unavailabilityService.findUnavailibilityByClassroomId(unavailability.getClassroom().getId()).size(),2L,"findUnavailibilityByClassroomIdTes not passed");
+        Mockito.when(unavailabilityRepository.findUnavailabilityByClassroomId(unavailability.getClassroom().getClassroomId())).thenReturn(unavailabilityIterable);
+        assertEquals(unavailabilityService.findUnavailibilityByClassroomId(unavailability.getClassroom().getClassroomId()).size(),2L,"findUnavailibilityByClassroomIdTes not passed");
 
     }
 
@@ -118,9 +118,9 @@ public class UnavailabilityServiceTest {
         Professor professor2 = new Professor("2","2","2","2");
         professor2.setProfessorId(2L);
         Classroom classroom = new Classroom("6ème");
-        classroom.setId(1L);
+        classroom.setClassroomId(1L);
         Classroom classroom2 = new Classroom("5ème");
-        classroom2.setId(2L);
+        classroom2.setClassroomId(2L);
         Equipment equipment = new Equipment("equipment name1");
         equipment.setEquipmentId(1L);
         StudentClass studentClass = new StudentClass("student name1");
