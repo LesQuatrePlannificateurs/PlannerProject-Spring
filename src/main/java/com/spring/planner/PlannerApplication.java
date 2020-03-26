@@ -16,12 +16,13 @@ public class PlannerApplication {
 
     @Bean
     public CommandLineRunner demo(UnavailabilityRepository urepository, ProfessorReporitory pRreporitory, ClassroomRepository clrepository,
-                                  StudentClassRepository strepository, EquipmentRepository equipmentRepository, StudentRepository stRepo) {
+                                  StudentClassRepository strepository, EquipmentRepository equipmentRepository, StudentRepository stRepo, DirectorRepository directorRepository) {
         {
             return new CommandLineRunner() {
                 @Override
                 public void run(String... args) throws Exception {
-
+                    Director dir = new Director("BSauvage", "blabla","Boris","Sauvage");
+                    directorRepository.save(dir);
                     Professor pA = new Professor("Audenb", "blabla","Aude","NB");
                     Professor pM = new Professor("MathPo", "blo","Math","Port");
                     Professor pAk = new Professor("AkimAl", "bleh","Akim","Ali");
