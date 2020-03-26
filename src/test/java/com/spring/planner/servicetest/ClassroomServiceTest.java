@@ -32,9 +32,9 @@ public class ClassroomServiceTest {
      */
     public void findClassroomByIdTest() throws UserDoesNotExistException {
         Classroom classroom = new Classroom("5 ème B");
-        classroom.setId(1L);
-        Mockito.when(classroomRepository.findById(classroom.getId())).thenReturn(Optional.of(classroom));
-        Classroom found = classroomService.findClassroombyId(classroom.getId());
+        classroom.setClassroomId(1L);
+        Mockito.when(classroomRepository.findById(classroom.getClassroomId())).thenReturn(Optional.of(classroom));
+        Classroom found = classroomService.findClassroombyId(classroom.getClassroomId());
         assertEquals(classroom,found,"findClassroomByIdTest not passed");
     }
 

@@ -71,9 +71,9 @@ public class RoomRestControllerTest {
      */
     public void findClassroomByIdTest() throws UserDoesNotExistException {
         Classroom classroom = new Classroom("4 ème A");
-        classroom.setId(2L);
-        Mockito.when(classroomService.findClassroombyId(classroom.getId())).thenReturn(classroom);
-        Classroom found = roomRestController.findClassroomById(classroom.getId());
+        classroom.setClassroomId(2L);
+        Mockito.when(classroomService.findClassroombyId(classroom.getClassroomId())).thenReturn(classroom);
+        Classroom found = roomRestController.findClassroomById(classroom.getClassroomId());
         assertEquals(classroom,found,"findClassroomByIdTest not passed");
     }
 
