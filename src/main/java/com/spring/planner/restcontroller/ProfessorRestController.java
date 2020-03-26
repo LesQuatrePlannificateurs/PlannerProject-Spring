@@ -12,8 +12,8 @@ import javax.validation.Valid;
 import java.util.List;
 
 @RestController
-//@CrossOrigin(origins = "http://localhost:4200")
-//@RequestMapping("/api")
+@CrossOrigin(origins = "http://localhost:4200")
+@RequestMapping("/apiProf")
 public class ProfessorRestController {
 
     @Autowired
