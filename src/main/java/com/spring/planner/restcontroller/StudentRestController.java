@@ -28,6 +28,10 @@ public class StudentRestController {
     public Student findStudentById(@PathVariable("id") Long id){
         return studentService.findStudentById(id);
     }
+    @RequestMapping(value = "/findstudent/{login}")
+    public Student findStudentById(@PathVariable("login") String login){
+        return studentService.findStudentByLogin(login);
+    }
 
     @RequestMapping(value = "/deletestudent/{id}")
     public void deletestudentById(@PathVariable("id")Long id){ studentService.deleteStudentById(id);

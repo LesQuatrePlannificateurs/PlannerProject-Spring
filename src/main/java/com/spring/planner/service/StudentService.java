@@ -50,5 +50,9 @@ public class StudentService {
         return (List<Student>) studentRepository.findAllStudentByStudentClassId(studentClassId);
     }
 
+    public Student findStudentByLogin(String login){
+        return studentRepository.findByLogin(login);
+    }
+
 
 }
