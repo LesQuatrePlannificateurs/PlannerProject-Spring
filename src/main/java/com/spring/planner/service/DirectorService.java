@@ -29,4 +29,8 @@ public class DirectorService {
         return directorRepository.findById(id).orElse(null);
     }
 
+    public Director findDirectorByLogin(String login){
+        return directorRepository.findByLogin(login);
+    }
+
 }

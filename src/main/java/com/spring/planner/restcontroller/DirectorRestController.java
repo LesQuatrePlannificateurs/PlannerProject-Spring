@@ -34,4 +34,9 @@ public class DirectorRestController {
     public Director findDirectorById(@PathVariable("id") Long id){
         return directorService.findDirectorById(id);
     }
+
+    @RequestMapping(value = "/finddirectorbylogin/{login}")
+    public Director findDirectorById(@PathVariable("login") String login){
+        return directorService.findDirectorByLogin(login);
+    }
 }

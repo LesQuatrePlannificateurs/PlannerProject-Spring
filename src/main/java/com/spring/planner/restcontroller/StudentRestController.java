@@ -28,7 +28,7 @@ public class StudentRestController {
     public Student findStudentById(@PathVariable("id") Long id){
         return studentService.findStudentById(id);
     }
-    @RequestMapping(value = "/findstudent/{login}")
+    @RequestMapping(value = "/findstudentlogin/{login}")
     public Student findStudentById(@PathVariable("login") String login){
         return studentService.findStudentByLogin(login);
     }
