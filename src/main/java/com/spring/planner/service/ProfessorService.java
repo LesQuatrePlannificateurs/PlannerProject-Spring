@@ -35,6 +35,10 @@ public class ProfessorService {
         professorRepository.deleteById(id);
     }
 
+    public Professor findProfessorByLogin(String login){
+        return professorRepository.findByLogin(login);
+    }
+
     public List<Professor> findAllProfessors(){
         return (List<Professor>) professorRepository.findAll();
     }
