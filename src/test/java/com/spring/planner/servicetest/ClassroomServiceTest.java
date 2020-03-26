@@ -1,5 +1,6 @@
 package com.spring.planner.servicetest;
 import com.spring.planner.entities.Classroom;
+import com.spring.planner.exception.UserDoesNotExistException;
 import com.spring.planner.repository.ClassroomRepository;
 import com.spring.planner.service.ClassroomService;
 import org.junit.jupiter.api.Test;
@@ -25,17 +26,17 @@ public class ClassroomServiceTest {
     ClassroomRepository classroomRepository;
 
 
-//    @Test
-//    /**
-//     * unit test of findClassroomById() from class ClassroomService
-//     */
-//    public void findClassroomByIdTest(){
-//        Classroom classroom = new Classroom("5 ème B");
-//        classroom.setId(1L);
-//        Mockito.when(classroomRepository.findById(classroom.getId())).thenReturn(Optional.of(classroom));
-//        Classroom found = classroomService.findClassroombyId(classroom.getId());
-//        assertEquals(classroom,found,"findClassroomByIdTest not passed");
-//    }
+    @Test
+    /**
+     * unit test of findClassroomById() from class ClassroomService
+     */
+    public void findClassroomByIdTest() throws UserDoesNotExistException {
+        Classroom classroom = new Classroom("5 ème B");
+        classroom.setId(1L);
+        Mockito.when(classroomRepository.findById(classroom.getId())).thenReturn(Optional.of(classroom));
+        Classroom found = classroomService.findClassroombyId(classroom.getId());
+        assertEquals(classroom,found,"findClassroomByIdTest not passed");
+    }
 
     @Test
     /**

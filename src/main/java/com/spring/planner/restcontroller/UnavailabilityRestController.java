@@ -10,6 +10,7 @@ import java.util.List;
 @RestController
 @CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping("/apiUnavailability")
+
 public class UnavailabilityRestController {
 
     @Autowired

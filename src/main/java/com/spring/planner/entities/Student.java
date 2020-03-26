@@ -24,8 +24,9 @@ public class Student extends Person {
         super();
     }
 
-    public Student(String login, String password, String firstname, String lastname) {
+    public Student(String login, String password, String firstname, String lastname,StudentClass studentClass) {
         super(login, password, firstname, lastname);
+        this.studentClass = studentClass;
     }
 
     public Long getStudentId() {
