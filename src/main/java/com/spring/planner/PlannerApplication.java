@@ -30,6 +30,7 @@ public class PlannerApplication {
                     clrepository.save(classroom);
                     StudentClass stClass = new StudentClass("5èmeB");
                     strepository.save(stClass);
+
                     Student student = new Student("Akim", "lou","akim","NB",stClass );
                     Student student1 = new Student("Mat", "loulou","mat","Port",stClass);
                     stRepo.save(student);
@@ -37,6 +38,7 @@ public class PlannerApplication {
                     urepository.save(new Unavailability("Histoire", "03/18/2020 09:00:00","03/18/2020 12:00:00",professor, classroom,stClass,equipment));
                     urepository.save(new Unavailability("Français", "03/19/2020 14:00:00","03/19/2020 17:00:00",professor,classroom,stClass,equipment));
                     urepository.save(new Unavailability("Maths", "03/20/2020 08:00:00","03/20/2020 12:00:00",professor,classroom,stClass,equipment));
+
                     System.out.println("Unavailabilities added");
                 }
             };

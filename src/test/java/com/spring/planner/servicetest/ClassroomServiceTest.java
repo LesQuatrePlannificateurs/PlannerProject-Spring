@@ -45,7 +45,7 @@ public class ClassroomServiceTest {
     public void addClassroomTest(){
         Mockito.when(classroomRepository.save(any(Classroom.class))).then(returnsFirstArg());
         Classroom expectedClassroom = new Classroom("5");
-        expectedClassroom.setId(1L);
+        expectedClassroom.setClassroomId(1L);
         Classroom found = classroomService.addClassroom(expectedClassroom);
         assertEquals(expectedClassroom,found,"addClassroomTest not passed");
     }

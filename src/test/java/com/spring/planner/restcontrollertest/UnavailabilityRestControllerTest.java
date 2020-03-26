@@ -55,9 +55,9 @@ public class UnavailabilityRestControllerTest {
         Professor professor2 = new Professor("2","2","2","2");
         professor2.setProfessorId(2L);
         Classroom classroom = new Classroom("6ème");
-        classroom.setId(1L);
+        classroom.setClassroomId(1L);
         Classroom classroom2 = new Classroom("5ème");
-        classroom2.setId(2L);
+        classroom2.setClassroomId(2L);
         Equipment equipment = new Equipment("equipment name1");
         equipment.setEquipmentId(1L);
         StudentClass studentClass = new StudentClass("student name1");
@@ -73,7 +73,7 @@ public class UnavailabilityRestControllerTest {
         Mockito.when(unavailabilityService.updateUnavailability(expected,unavailabilityToUpdate.getId())).thenReturn(expected);
         Unavailability unavailabilityUpdated = unavailabilityRestController.updateUnavailability(expected, unavailabilityToUpdate.getId());
         assertEquals(unavailabilityUpdated.getId(),expected.getId());
-        assertEquals(unavailabilityUpdated.getClassroom().getId(),expected.getClassroom().getId());
+        assertEquals(unavailabilityUpdated.getClassroom().getClassroomId(),expected.getClassroom().getClassroomId());
         assertEquals(unavailabilityUpdated.getProfessor().getProfessorId(),expected.getProfessor().getProfessorId());
         assertEquals(unavailabilityUpdated.getEquipment(),expected.getEquipment());
         assertEquals(unavailabilityUpdated.getStart(),expected.getStart());

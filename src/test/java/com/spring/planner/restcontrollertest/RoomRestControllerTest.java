@@ -83,9 +83,9 @@ public class RoomRestControllerTest {
      */
     public void getPlanningClassroomTest(){
         Classroom classroom = new Classroom("6ème");
-        classroom.setId(1L);
+        classroom.setClassroomId(1L);
         Classroom classroom2 = new Classroom("5ème");
-        classroom2.setId(2L);
+        classroom2.setClassroomId(2L);
         Professor professor = new Professor("login","psw","firstname","lastname");
         professor.setProfessorId(1L);
         Equipment equipment = new Equipment();
@@ -96,8 +96,8 @@ public class RoomRestControllerTest {
         Unavailability unavailability1 = new Unavailability("name indispo2","start 2","end 2",professor,classroom2,studentClass,equipment);
         Unavailability unavailability2 = new Unavailability("name indispo3","start 3","end 3",professor,classroom,studentClass,equipment);
         List<Unavailability>unavailabilities=Arrays.asList(unavailability,unavailability2);
-        Mockito.when(unavailabilityService.findUnavailibilityByClassroomId(unavailability.getClassroom().getId())).thenReturn(unavailabilities);
-        assertEquals(roomRestController.getPlanningClassroom(unavailability.getClassroom().getId()).size(),2L,"getPlanningClassroomTest RestController not passed");
+        Mockito.when(unavailabilityService.findUnavailibilityByClassroomId(unavailability.getClassroom().getClassroomId())).thenReturn(unavailabilities);
+        assertEquals(roomRestController.getPlanningClassroom(unavailability.getClassroom().getClassroomId()).size(),2L,"getPlanningClassroomTest RestController not passed");
     }
 
 }
