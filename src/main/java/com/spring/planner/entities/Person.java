@@ -1,5 +1,7 @@
 package com.spring.planner.entities;
 
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+
 import javax.persistence.*;
 
 @MappedSuperclass
@@ -17,8 +19,10 @@ public abstract class Person {
 
     public Person(String login, String password,String firstname, String lastname){
         this.login=login;
-        this.password=password;
-        this.firstname=firstname;
+        BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+        String hashedPassword = passwordEncoder.encode(password);
+        this.password= hashedPassword;
+        this.firstname = firstname;
         this.lastname=lastname;
     }
 //

@@ -88,6 +88,7 @@ public class PlannerApplication {
                     urepository.save(new Unavailability("Physique", "03/27/2020 08:00:00","03/20/2020 12:00:00",pM,c1,stCl3,e1));
                     urepository.save(new Unavailability("EPS", "03/27/2020 08:00:00","03/20/2020 12:00:00",pM,c7,stCl3,e3));
 
+                    System.out.println(student1.getPassword());
                     System.out.println("Unavailabilities added");
                 }
             };
