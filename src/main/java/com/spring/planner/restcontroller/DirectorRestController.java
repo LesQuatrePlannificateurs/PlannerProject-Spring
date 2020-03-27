@@ -10,7 +10,7 @@ import java.util.List;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:4200")
-@RequestMapping("/apiDirector")
+@RequestMapping("/api/director")
 public class DirectorRestController {
     @Autowired
     DirectorService directorService;

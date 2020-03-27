@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 @RestController@CrossOrigin(origins = "http://localhost:4200")
-@RequestMapping("/apiStudentclass")
+@RequestMapping("/api/studentclass")
 public class StudentClassRestController {
     @Autowired
     StudentClassService studentClassService;

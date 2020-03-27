@@ -9,7 +9,7 @@ import java.util.List;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:4200")
-@RequestMapping("/apiUnavailability")
+@RequestMapping("/api/unavailability")
 
 public class UnavailabilityRestController {
 
