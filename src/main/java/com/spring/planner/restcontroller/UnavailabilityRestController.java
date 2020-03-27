@@ -9,7 +9,7 @@ import java.util.List;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:4200")
-@RequestMapping("/apiUnavailability")
+@RequestMapping("/apiunavailability")
 
 public class UnavailabilityRestController {
 
@@ -44,6 +44,12 @@ public class UnavailabilityRestController {
     @RequestMapping(value="/udpateunavailability/{id}", method = RequestMethod.POST)
     public Unavailability updateUnavailability(@RequestBody Unavailability unavailability, @PathVariable Long id){
         return unavailabilityService.updateUnavailability(unavailability,id);
+    }
+
+    @RequestMapping(value = "/allplannings")
+    public List<Unavailability> getAllUnavailability(){
+        List unaList = unavailabilityService.findAllUnavailbailities() ;
+        return unaList;
     }
 
 }

@@ -84,4 +84,7 @@ public class UnavailabilityService {
         return unavailabilityRepository.findById(id).orElse(null);
     }
 
+    public List<Unavailability> findAllUnavailbailities(){
+        return (List) unavailabilityRepository.findAll();
+    }
 }
