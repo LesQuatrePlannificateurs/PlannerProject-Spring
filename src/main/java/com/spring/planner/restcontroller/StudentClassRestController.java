@@ -24,7 +24,7 @@ public class StudentClassRestController {
      * @param studentClassId id of the specific classroom
      * @return a list of unavailabilities for this classroom
      */
-    @RequestMapping("/student-classPlanning/{id}")
+    @RequestMapping("/studentclassplanning/{id}")
     public List<Unavailability> getPlanningStudentClass(@PathVariable("id")Long studentClassId){
         List unaList = unavailabilityService.findUnavailibilityByStudentClassId(studentClassId) ;
         return unaList;
@@ -35,7 +35,7 @@ public class StudentClassRestController {
      * @param id id of the specific studentClass
      * @return a studentClass
      */
-    @RequestMapping("/student-class/{id}")
+    @RequestMapping("/studentclass/{id}")
     public StudentClass findStudentClassById(@PathVariable("id")Long id){
         return studentClassService.findStudentClassById(id);
     }
@@ -45,7 +45,7 @@ public class StudentClassRestController {
      * @param studentClass to add
      * @return the added studentClass
      */
-    @RequestMapping(value = "/addstudentClass", method = RequestMethod.POST)
+    @RequestMapping(value = "/addstudentclass", method = RequestMethod.POST)
     public StudentClass addStudentClass(@RequestBody StudentClass studentClass){
         return studentClassService.addStudentClass(studentClass);
     }
@@ -54,7 +54,7 @@ public class StudentClassRestController {
      * Delete a studentCass thanks to its id
      * @param id of the studentCLass to delete
      */
-    @RequestMapping("/deletestudentClass/{id}")
+    @RequestMapping("/deletestudentclass/{id}")
     public void deleteStudentClass(@PathVariable("id")Long id){
         studentClassService.deleteStudentClass(id);
     }
