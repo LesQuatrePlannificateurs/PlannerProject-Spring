@@ -41,4 +41,9 @@ public class StudentRestController {
     public List<Student> getAllStudentsByStudentClassId(@PathVariable("id")Long studentClassId){
         return studentService.getAllStudentByStudentClassId(studentClassId);
     }
+
+    @RequestMapping(value = "allstudents")
+    public List<Student> getAllStudents(){
+        return studentService.getAllStudent();
+    }
 }
