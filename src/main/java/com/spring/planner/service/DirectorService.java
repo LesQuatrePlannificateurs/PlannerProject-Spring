@@ -1,6 +1,7 @@
 package com.spring.planner.service;
 
 import com.spring.planner.entities.Director;
+import com.spring.planner.entities.Person;
 import com.spring.planner.repository.DirectorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -32,5 +33,6 @@ public class DirectorService {
     public Director findDirectorByLogin(String login){
         return directorRepository.findByLogin(login);
     }
+
 
 }
