@@ -80,13 +80,13 @@ public class PlannerApplication {
                     stRepo.save(student2);
                     stRepo.save(student3);
                     stRepo.save(student4);
-                    urepository.save(new Unavailability("Histoire", "03/27/2020 09:00:00","03/18/2020 12:00:00",pA, c3,stCl3,e1));
-                    urepository.save(new Unavailability("Français", "03/26/2020 14:00:00","03/19/2020 17:00:00",pAk,c6,stCl2,e1));
-                    urepository.save(new Unavailability("Bio", "03/28/2020 11:00:00","03/20/2020 12:00:00",pM,c3,stCl1,e7));
-                    urepository.save(new Unavailability("Musique", "03/26/2020 12:00:00","03/20/2020 14:00:00",pM,c5,stCl1,e6));
-                    urepository.save(new Unavailability("Chimie", "03/27/2020 10:00:00","03/20/2020 12:00:00",pV,c4,stCl2,e7));
-                    urepository.save(new Unavailability("Physique", "03/27/2020 08:00:00","03/20/2020 12:00:00",pM,c1,stCl3,e1));
-                    urepository.save(new Unavailability("EPS", "03/27/2020 08:00:00","03/20/2020 12:00:00",pM,c7,stCl3,e3));
+                    urepository.save(new Unavailability("Histoire", "03/31/2020 09:00:00","03/18/2020 12:00:00",pA, c3,stCl3,e1));
+                    urepository.save(new Unavailability("Français", "03/31/2020 14:00:00","03/19/2020 17:00:00",pAk,c6,stCl2,e1));
+                    urepository.save(new Unavailability("Bio", "04/01/2020 11:00:00","03/20/2020 12:00:00",pM,c3,stCl1,e7));
+                    urepository.save(new Unavailability("Musique", "04/01/2020 12:00:00","03/20/2020 14:00:00",pM,c5,stCl1,e6));
+                    urepository.save(new Unavailability("Chimie", "04/02/2020 10:00:00","03/20/2020 12:00:00",pV,c4,stCl2,e7));
+                    urepository.save(new Unavailability("Physique", "04/03/2020 08:00:00","03/20/2020 12:00:00",pM,c1,stCl3,e1));
+                    urepository.save(new Unavailability("EPS", "04/03/2020 08:00:00","03/20/2020 12:00:00",pM,c7,stCl3,e3));
 
                     System.out.println("Unavailabilities added");
                 }
