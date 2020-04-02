@@ -1,7 +1,6 @@
 package com.spring.planner.securingweb;
 
-import com.spring.planner.repository.ProfessorReporitory;
-import com.spring.planner.service.ProfessorService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
