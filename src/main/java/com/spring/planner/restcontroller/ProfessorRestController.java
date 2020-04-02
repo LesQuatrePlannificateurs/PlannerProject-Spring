@@ -48,9 +48,7 @@ public class ProfessorRestController {
     }
 
     @RequestMapping(value = "/deleteprofessor/{id}")
-    public void deleteProfessorById(@PathVariable("id")Long id){
-        professorService.deleteProfessorById(id);
-    }
+    public void deleteProfessorById(@PathVariable("id")Long id){ professorService.deleteProfessorById(id);}
 
     @RequestMapping(value = "/findallprofessors")
     public List<Professor> findAllProfessors(){
