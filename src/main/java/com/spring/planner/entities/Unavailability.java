@@ -1,5 +1,8 @@
 package com.spring.planner.entities;
 
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+
 import javax.persistence.*;
 import java.util.Date;
 /**
@@ -32,17 +35,21 @@ public class Unavailability {
     String nameIndispo;
     String start;
     String end;
-    @OneToOne(cascade = CascadeType.MERGE, orphanRemoval = true)
+    @OneToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name = "professorId")
+    @OnDelete(action = OnDeleteAction.CASCADE)
     Professor professor;
-    @OneToOne(cascade = CascadeType.MERGE, orphanRemoval = true)
+    @OneToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name = "classroomId")
+    @OnDelete(action = OnDeleteAction.CASCADE)
     Classroom classroom;
-    @OneToOne(cascade = CascadeType.MERGE, orphanRemoval = true)
+    @OneToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name="studentClassId")
+    @OnDelete(action = OnDeleteAction.CASCADE)
     StudentClass studentClass;
-    @OneToOne(cascade = CascadeType.MERGE, orphanRemoval = true)
+    @OneToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name = "equipmentId")
+    @OnDelete(action = OnDeleteAction.CASCADE)
     Equipment equipment;
 
 
