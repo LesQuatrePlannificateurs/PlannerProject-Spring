@@ -21,7 +21,7 @@ public abstract class Person {
         this.login=login;
         BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
         String hashedPassword = passwordEncoder.encode(password);
-        this.password= hashedPassword;
+        this.password = hashedPassword;
         this.firstname = firstname;
         this.lastname=lastname;
     }
