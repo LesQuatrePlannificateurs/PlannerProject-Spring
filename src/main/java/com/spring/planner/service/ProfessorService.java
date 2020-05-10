@@ -5,6 +5,9 @@ import com.spring.planner.entities.Person;
 import com.spring.planner.entities.Professor;
 import com.spring.planner.repository.ProfessorReporitory;
 import org.springframework.beans.factory.annotation.Autowired;
+//import org.springframework.security.core.userdetails.UserDetails;
+//import org.springframework.security.core.userdetails.UserDetailsService;
+//import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -15,7 +18,7 @@ import java.util.List;
 import java.util.Objects;
 
 @Service
-public class ProfessorService implements UserDetailsService{
+public class ProfessorService implements UserDetailsService {
 
     @Autowired
     ProfessorReporitory professorRepository;

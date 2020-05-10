@@ -2,17 +2,15 @@ package com.spring.planner.entities;
 
 import java.io.Serializable;
 import java.util.Collection;
-import java.util.stream.Collectors;
 
 import javax.persistence.*;
 
 import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 @Entity
 @Table(name="professor")
-public class Professor extends Person implements UserDetails{
+public class Professor extends Person implements Serializable, UserDetails{
 
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
@@ -105,7 +103,6 @@ public class Professor extends Person implements UserDetails{
 
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
-		// TODO Auto-generated method stub
 		return super.getAuthorities();
 	}
 
