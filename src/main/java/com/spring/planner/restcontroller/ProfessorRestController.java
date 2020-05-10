@@ -6,6 +6,10 @@ import com.spring.planner.entities.Unavailability;
 import com.spring.planner.service.ProfessorService;
 import com.spring.planner.service.UnavailabilityService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -31,6 +35,13 @@ public class ProfessorRestController {
     public List<Unavailability> professorPlanningById(@PathVariable("id") Long id){
         return unavailabilityService.findUnavailibilityByProfessorId(id);
     }
+    
+    @GetMapping(produces = "application/json")
+	@RequestMapping({ "/validateProfLogin" })
+	public Professor validateLogin() {
+		return professorService.findProfessorById(1L);
+	}
+    
 
     @RequestMapping(value = "/addprofessors", method = RequestMethod.POST)
     public Professor addProfessor(@RequestBody Professor professor){
@@ -50,10 +61,10 @@ public class ProfessorRestController {
     @RequestMapping(value = "/deleteprofessor/{id}")
     public void deleteProfessorById(@PathVariable("id")Long id){ professorService.deleteProfessorById(id);}
 
+
     @RequestMapping(value = "/findallprofessors")
     public List<Professor> findAllProfessors(){
         return professorService.findAllProfessors();
     }
-
 
 }

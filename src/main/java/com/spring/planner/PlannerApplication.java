@@ -16,7 +16,7 @@ public class PlannerApplication {
 
     @Bean
     public CommandLineRunner demo(UnavailabilityRepository urepository, ProfessorReporitory pRreporitory, ClassroomRepository clrepository,
-                                  StudentClassRepository strepository, EquipmentRepository equipmentRepository, StudentRepository stRepo, DirectorRepository directorRepository) {
+                                  StudentClassRepository strepository, EquipmentRepository equipmentRepository, StudentRepository stRepo, DirectorRepository directorRepository)
         {
             return new CommandLineRunner() {
                 @Override
@@ -70,7 +70,7 @@ public class PlannerApplication {
                     strepository.save(stCl4);
                     strepository.save(stCl5);
 
-                    Student student = new Student("Akim", "lou","akim","NB",stCl1 );
+                    Student student = new Student("Akim", "lou","akim","NB",stCl1);
                     Student student1 = new Student("Francis", "poupo","francis","Poupo",stCl2);
                     Student student2 = new Student("Pauline", "titi","Pauline","titi",stCl2);
                     Student student3 = new Student("Sophie", "lala","Soph","lala",stCl3);
@@ -130,4 +130,4 @@ public class PlannerApplication {
 //
 //    }
 
-}
+

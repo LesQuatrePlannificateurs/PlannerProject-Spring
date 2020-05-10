@@ -1,16 +1,23 @@
 package com.spring.planner.entities;
 
+import java.io.Serializable;
+import java.util.Collection;
+
 import javax.persistence.*;
+
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
 
 @MappedSuperclass
 @Inheritance(strategy=InheritanceType.TABLE_PER_CLASS)
-public abstract class Person {
+public abstract class Person implements Serializable, UserDetails {
 
 
     String login;
     String password;
     String firstname;
     String lastname;
+    String role;
 
     public Person(){
     }
@@ -21,14 +28,7 @@ public abstract class Person {
         this.firstname=firstname;
         this.lastname=lastname;
     }
-//
-//    public Long getId() {
-//        return pid;
-//    }
-//
-//    public void setId(Long id) {
-//        this.pid = id;
-//    }
+
 
     public String getLogin() {
         return login;
@@ -61,4 +61,50 @@ public abstract class Person {
     public void setLastname(String lastname) {
         this.lastname = lastname;
     }
+
+	public String getRole() {
+		return role;
+	}
+
+	public void setRole(String role) {
+		this.role = role;
+	}
+
+	@Override
+	public Collection<? extends GrantedAuthority> getAuthorities() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String getUsername() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean isAccountNonExpired() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean isAccountNonLocked() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean isCredentialsNonExpired() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean isEnabled() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+    
+    
 }
